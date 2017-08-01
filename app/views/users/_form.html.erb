@@ -33,9 +33,15 @@
 
   <div class="field">
     <%#= form.label :rating %>
-    <%= form.hidden_field :rating, id: :user_rating, :value => "0" %>
+    <%#= form.hidden_field :rating, id: :user_rating, :value => "0" %>
+    <%= form.hidden_field :balance, id: :user_balance, :value => "0" %>
   </div>
-
+  <div class="field">
+    <%= form.hidden_field :added, id: :user_added, :value => "0" %>
+  </div>
+  <div class="field">
+    <%= form.hidden_field :held, id: :user_added, :value => "0" %>
+  </div> 
   <div class="actions">
     <%= form.submit %>
   </div>

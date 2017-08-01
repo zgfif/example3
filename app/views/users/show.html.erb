@@ -21,13 +21,13 @@
 </p>
 
 <p>
-  <strong>Rating:</strong>
-  <%= @user.rating %>
+  <strong>Balance:</strong>
+  <%= @user.balance %>
 </p>
 <p>
 	Added by <%= @user.name %>:<br>
 	<% @user.books.each do |book| %>
-		<%#= book.title %>
+		
 		|<%= link_to book.title, book_path(book) %>|  
 	<% end %> 
 </p>
