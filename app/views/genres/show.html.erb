@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Genre name:</strong>
+  <%= @genre.genre_name %>
+</p>
+<p>
+This genre has books:<br>
+<% @genre.books.each do |book| %>
+	<%#= book.title %>
+	|<%= link_to book.title, book_path(book) %>|
+
+<% end %>
+</p>
+
+<%= link_to 'Edit', edit_genre_path(@genre) %> |
+<%= link_to 'Back', genres_path %>
