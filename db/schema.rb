@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170801183012) do
+ActiveRecord::Schema.define(version: 20170801192635) do
 
   create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -56,11 +56,11 @@ ActiveRecord::Schema.define(version: 20170801183012) do
     t.string "surname"
     t.string "phone"
     t.string "email"
-    t.integer "balance"
+    t.integer "balance", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "added"
-    t.integer "held"
+    t.integer "added", default: 0
+    t.integer "held", default: 0
   end
 
   add_foreign_key "books", "authors"
