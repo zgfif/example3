@@ -51,6 +51,10 @@
     <%#= form.text_field :genre_id, id: :book_genre_id %>
     <%= form.collection_select(:location_id, Location.all, :id, :name) %>
   </div>
+  <div class="field">
+    <%= form.label :rating %>
+    <%= form.text_field :rating, id: :book_rating %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

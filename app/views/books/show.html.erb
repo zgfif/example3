@@ -33,5 +33,9 @@
   <strong>Location:</strong>
   <%= @book.location.name %>
 </p>
+<p>
+  <strong>Rating:</strong>
+  <%= @book.rating %>
+</p>
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
