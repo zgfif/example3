@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
-
+ 
+  
   # GET /books
   # GET /books.json
   def index
@@ -30,6 +31,10 @@ class BooksController < ApplicationController
       if @book.save
         format.html { redirect_to @book, notice: 'Book was successfully created.' }
         format.json { render :show, status: :created, location: @book }
+ #       increase_added(@book)
+user = User.find_by(id: @book.user_id)
+user.added = user.added.to_i + 1
+user.save
       else
         format.html { render :new }
         format.json { render json: @book.errors, status: :unprocessable_entity }
@@ -44,6 +49,8 @@ class BooksController < ApplicationController
       if @book.update(book_params)
         format.html { redirect_to @book, notice: 'Book was successfully updated.' }
         format.json { render :show, status: :ok, location: @book }
+        
+                
       else
         format.html { render :edit }
         format.json { render json: @book.errors, status: :unprocessable_entity }
@@ -69,6 +76,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:title, :language, :description, :user_id, :author_id, :genre_id, :location_id, :rating)
+      params.require(:book).permit(:title, :language, :description, :user_id, :author_id, :genre_id, :location_id, :rating,:balance)
     end
 end

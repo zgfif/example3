@@ -25,6 +25,10 @@
   <%= @user.balance %>
 </p>
 <p>
+  <strong><%= @user.name %> added</strong>
+  <%= @user.added %> books
+</p>
+<p>
 	Added by <%= @user.name %>:<br>
 	<% @user.books.each do |book| %>
 		
