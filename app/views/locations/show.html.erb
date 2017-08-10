@@ -28,7 +28,7 @@
 	This location has books:<br>
 	<% @location.books.each do |book| %>
 		<%#= book.title %>
-		<%= link_to book.title, book_path(book) %>
+		<%= link_to book.title, book_path(book) %><br>
 	
 	<% end %>
 </p>

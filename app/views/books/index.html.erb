@@ -9,6 +9,7 @@
       <th>Language</th>
       <th>Description</th>
       <th>User</th>
+      <th>Holder</th>
       <th>Author</th>
       <th>Genre</th>
       <th>Rating</th>
@@ -25,6 +26,9 @@
         <td>
             <%= book.user.name %> 
             <%= book.user.surname %>
+        </td>
+        <td>
+            <%= book.holder.present? ? book.holder.name + " " + book.user.surname : "no holder" %>
         </td>
         <td>
             <%= book.author.name %>

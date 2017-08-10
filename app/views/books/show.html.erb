@@ -38,5 +38,9 @@
   <strong>Rating:</strong>
   <%= @book.rating %>
 </p>
+<p>
+  <strong>Holder:</strong>
+  <%= @book.holder.present? ? @book.holder.name + " " + @book.holder.surname : 'no holder' %>
+</p>
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
