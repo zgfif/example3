@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Books</h1>
-<%= link_to 'New Book', new_book_path %>
+<%= link_to 'Add book', new_book_path %>
 <table>
   <thead>
     <tr>
       <th>Title</th>
       <th>Language</th>
       <th>Description</th>
-      <th>User</th>
+      <th>Added by</th>
       <th>Holder</th>
       <th>Author</th>
       <th>Genre</th>
@@ -24,11 +24,10 @@
         <td><%= book.language %></td>
         <td><%= book.description %></td>
         <td>
-            <%= book.user.name %> 
-            <%= book.user.surname %>
+            <%= book.user.name.nil? && book.user.surname.nil? ? book.user.email : book.user.name+" "+book.user.surname %>
         </td>
         <td>
-            <%= book.holder.present? ? book.holder.name + " " + book.user.surname : "no holder" %>
+            <%= book.holder.present? ? book.holder.email : "no holder" %>
         </td>
         <td>
             <%= book.author.name %>

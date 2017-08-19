@@ -17,13 +17,12 @@
 
 <p>
   <strong>User:</strong>
-  <%= @book.user.name %>
-  <%= @book.user.surname %>
+  <%= @book.user.name.present? && @book.user.surname.present? ? @book.user.name+" "+@book.user.surname : @book.user.email %>
 </p>
 
 <p>
-  <strong>Author:</strong>
-  <%= @book.author.name %> <%= @book.author.surname %>
+  <strong>Author:</strong">
+    <%= @book.author.name+" "+@book.author.surname %>
 </p>
 
 <p>
@@ -40,7 +39,16 @@
 </p>
 <p>
   <strong>Holder:</strong>
-  <%= @book.holder.present? ? @book.holder.name + " " + @book.holder.surname : 'no holder' %>
+  <% if @book.holder.present? %>
+  		<% if @book.holder.name.present? && @book.holder.surname.present? %>
+   				<%= @book.holder.name + " " + @book.holder.surname  %> 
+   			<% else %>
+   				<%= @book.holder.email %>
+   				
+   		<% end %>
+   	<%else %> 
+   			<%='no holder'%>
+  <% end %>
 </p>
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bookboard2</title>
+    <title>Bookboard</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,7 +10,8 @@
 
   <body>
   <% if user_signed_in? %>
-              <%#= current_user.name %>
+              <%= "Hello, "+current_user.name %>  
+              <%= link_to 'Profile', user_path(current_user) %>
             <%= link_to 'Sign out', destroy_user_session_path, method: :delete %><br>
 
         <% else %>
