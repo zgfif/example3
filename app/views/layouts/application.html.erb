@@ -10,18 +10,19 @@
 
   <body>
   <% if user_signed_in? %>
-              <%= "Hello, "+current_user.name %>  
+              <%= current_user.name.present? ? "Hello, "+current_user.name + " " : current_user.email+"  " %>  
               <%= link_to 'Profile', user_path(current_user) %>
-            <%= link_to 'Sign out', destroy_user_session_path, method: :delete %><br>
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+            <%= link_to 'Add book', new_book_path %><br>
 
         <% else %>
-            <%= link_to 'Sign up', new_user_registration_path %>
-            <%= link_to 'Sign in', new_user_session_path %><br>
+            <%= link_to 'Sign in', new_user_session_path %>
+            <%= link_to 'Register', new_user_registration_path %><br>
   <% end %>
   
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <p class="notice"><%#= notice %></p>
+  <p class="alert"><%#= alert %></p>
     <%= yield %>
 
   </body>

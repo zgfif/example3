@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Books</h1>
+<% if user_signed_in? %>
 <%= link_to 'Add book', new_book_path %>
+<% end %>
 <table>
   <thead>
     <tr>
@@ -36,8 +38,10 @@
         <td><%= book.genre.genre_name %></td>
         <td><%= book.rating %></td>
         <td><%= link_to 'Show', book %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if user_signed_in? %>
+            <td><%= link_to 'Edit', edit_book_path(book) %></td>
+            <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
