@@ -1,6 +1,6 @@
 class LocationsController < ApplicationController
   before_action :authenticate_user!, except: [:index,:show]  
-  before_action :set_location, only: [:show, :edit, :update, :destroy]
+  before_action :set_location, only: :show
 
   # GET /locations
   # GET /locations.json
@@ -12,7 +12,7 @@ class LocationsController < ApplicationController
   # GET /locations/1.json
   def show
   end
-
+=begin
   # GET /locations/new
   def new
     @location = Location.new
@@ -61,7 +61,7 @@ class LocationsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+=end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_location

@@ -2,7 +2,7 @@
 
 <h1>Books</h1>
 <% if user_signed_in? %>
-<%= link_to 'Add book', new_book_path %>
+<%= link_to 'Add book', new_admin_book_path %>
 <% end %>
 <table>
   <thead>
@@ -39,8 +39,8 @@
         <td><%= book.rating %></td>
         <td><%= link_to 'Show', book %></td>
         <% if user_signed_in? %>
-            <td><%= link_to 'Edit', edit_book_path(book) %></td>
-            <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Edit', edit_admin_book_path(book) %></td>
+            <td><%= link_to 'Destroy', admin_book_path(book), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>

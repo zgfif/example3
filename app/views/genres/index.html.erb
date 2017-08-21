@@ -2,7 +2,7 @@
 
 <h1>Genres</h1>
 <% if user_signed_in? %>
-        <%= link_to 'Add new genre', new_genre_path %>
+        <%= link_to 'Add new genre', new_admin_genre_path %>
 <% end %>
 <table>
   <thead>
@@ -18,8 +18,8 @@
         <td><%= genre.genre_name %></td>
         <td><%= link_to 'Show', genre %></td>
         <% if user_signed_in? %>
-                <td><%= link_to 'Edit', edit_genre_path(genre) %></td>
-                <td><%= link_to 'Destroy', genre, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= link_to 'Edit', edit_admin_genre_path(genre) %></td>
+                <td><%= link_to 'Destroy', admin_genre_path(genre), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>

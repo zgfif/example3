@@ -1,0 +1,67 @@
+<%= form_with(model: [:admin, @user], local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :user_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :surname %>
+    <%= form.text_field :surname, id: :user_surname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone, id: :user_phone %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :user_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= form.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password_confirmation %><br />
+    <%= form.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+
+
+
+
+
+  <div class="field">
+    <%#= form.label :rating %>
+    <%#= form.hidden_field :rating, id: :user_rating, :value => "0" %>
+    <%= form.hidden_field :balance, id: :user_balance %>
+  </div>
+  <div class="field">
+    <%= form.hidden_field :added, id: :user_added %>
+  </div>
+  <div class="field">
+    <%= form.hidden_field :held, id: :user_added %>
+  </div> 
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -2,7 +2,7 @@
 
 <h1>Authors</h1>
   <% if user_signed_in? %>
-        <%= link_to 'Add new author', new_author_path %>
+        <%= link_to 'Add new author', new_admin_author_path %>
   <% end %>      
 <table>
   <thead>
@@ -20,8 +20,8 @@
         <td><%= author.surname %></td>
         <td><%= link_to 'Show', author %></td>
         <% if user_signed_in? %>
-              <td><%= link_to 'Edit', edit_author_path(author) %></td>
-              <td><%= link_to 'Destroy', author, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Edit', edit_admin_author_path(author) %></td>
+              <td><%= link_to 'Destroy', admin_author_path(author), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>      
       </tr>
     <% end %>

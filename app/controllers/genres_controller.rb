@@ -1,6 +1,6 @@
 class GenresController < ApplicationController
-  before_action :authenticate_user!, except: [:index,:show]
-  before_action :set_genre, only: [:show, :edit, :update, :destroy]
+  #before_action :authenticate_user!, except: [:index,:show]
+  before_action :set_genre, only: :show#, :edit, :update, :destroy]
 
   # GET /genres
   # GET /genres.json
@@ -14,6 +14,7 @@ class GenresController < ApplicationController
   end
 
   # GET /genres/new
+=begin
   def new
     @genre = Genre.new
   end
@@ -61,7 +62,7 @@ class GenresController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+=end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_genre

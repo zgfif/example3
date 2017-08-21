@@ -1,6 +1,6 @@
 class AuthorsController < ApplicationController
-  before_action :authenticate_user!, except: [:index,:show]
-  before_action :set_author, only: [:show, :edit, :update, :destroy]
+  # before_action :authenticate_user!, except: [:index,:show]
+  before_action :set_author, only: :show
 
   # GET /authors
   # GET /authors.json
@@ -12,7 +12,7 @@ class AuthorsController < ApplicationController
   # GET /authors/1.json
   def show
   end
-
+=begin
   # GET /authors/new
   def new
     @author = Author.new
@@ -62,6 +62,7 @@ class AuthorsController < ApplicationController
     end
   end
 
+=end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_author

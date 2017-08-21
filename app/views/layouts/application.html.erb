@@ -9,11 +9,13 @@
   </head>
 
   <body>
+  <p class="notice"><%= notice %> </p>
+  <p class="alert"><%= alert %></p>
   <% if user_signed_in? %>
               <%= current_user.name.present? ? "Hello, "+current_user.name + " " : current_user.email+"  " %>  
               <%= link_to 'Profile', user_path(current_user) %>
             <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-            <%= link_to 'Add book', new_book_path %><br>
+            <%= link_to 'Add book', new_admin_book_path %><br>
 
         <% else %>
             <%= link_to 'Sign in', new_user_session_path %>

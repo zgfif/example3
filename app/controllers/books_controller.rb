@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
-  before_action :authenticate_user!, except: [:index,:show]
-  before_action :set_book, only: [:show, :edit, :update, :destroy]
+  # before_action :authenticate_user!, except: [:index,:show]
+  before_action :set_book, only: :show#, :edit, :update, :destroy]
  
   
   # GET /books
@@ -13,7 +13,7 @@ class BooksController < ApplicationController
   # GET /books/1.json
   def show
   end
-
+=begin
   # GET /books/new
   def new
     @book = Book.new
@@ -68,7 +68,7 @@ user.save
       format.json { head :no_content }
     end
   end
-
+=end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_book
@@ -80,3 +80,4 @@ user.save
       params.require(:book).permit(:title, :language, :description, :user_id, :author_id, :genre_id, :location_id, :rating,:balance,:holder_id)
     end
 end
+
