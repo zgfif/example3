@@ -29,18 +29,23 @@
   <%= @user.added %> books
 </p>
 <p>
+  <strong>Took from location:</strong>
+  <%= @user.held %>
+</p>
+<p>
+<p>
 	Added by <%= @user.name %>:<br>
-	<% @user.books.each do |book| %>
+	<% @user.added_books.each do |added_book| %>
 		
-		|<%= link_to book.title, book_path(book) %>|  
+		|<%= link_to added_book.title, book_path(added_book) %>|  
 	<% end %> 
 </p>
 <p>
-	Hold by <%= @user.name %>:<br>
-	<%# @holder.books.each do |book| %>
+	Held by <%= @user.name %>:<br>
+	<% @user.held_books.each do |held_book| %>
 		
-	<%#= link_to book.title, book_path(book) %>|
-	<%# end %> 
+	<%= link_to held_book.title, book_path(held_book) %>|
+	<% end %> 
 </p>
 
 <%= link_to 'Edit profile', edit_admin_user_path(@user) %> |

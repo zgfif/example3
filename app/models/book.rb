@@ -18,6 +18,7 @@ class Book < ApplicationRecord
   	users = User.all
   		users.each do |user|
   			user.held = Book.where(holder_id: user.id.to_i).count
+        user.added = Book.where(user_id:user.id.to_i).count
   			user.save
   		end
   end
