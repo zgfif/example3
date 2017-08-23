@@ -9,7 +9,9 @@
   <strong>Language:</strong>
   <%= @book.language %>
 </p>
-
+<div>
+  <%= image_tag @book.image.url(:large) if @book.image? %>
+</div>
 <p>
   <strong>Description:</strong>
   <%= @book.description %>
@@ -50,5 +52,6 @@
    			<%='no holder'%>
   <% end %>
 </p>
+
 <%= link_to 'Edit', edit_admin_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+<%= link_to 'Back', :back %>
