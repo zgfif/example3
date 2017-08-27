@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  
+  get :search, controller: :welcome
+  # get :autocomplete, controller: :welcome
+
+
+
   resources :books, only: [:index,:show]
   resources :users, only: [:index,:show]
   resources :authors, only: [:index, :show]

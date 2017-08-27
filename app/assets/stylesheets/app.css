@@ -1,0 +1,14 @@
+#copyright{
+	padding: 15px;	
+	float:left;
+}
+
+footer{
+	background-color: #ccc;
+}
+
+.container{
+	padding: 20px;
+	/*border: 1px solid black;*/
+	float: right;
+}

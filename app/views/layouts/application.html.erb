@@ -5,27 +5,70 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel ="stylesheet" href="../../assets/stylesheets/app.css">
   </head>
 
   <body>
   <p class="notice"><%= notice %> </p>
-  <p class="alert"><%= alert %></p>
-  <% if user_signed_in? %>
+  <p class="alert" ><%= alert %></p>
+  <% unless current_page?(root_path) %>
+          <div>
+              <%= link_to 'Home', root_path %>
+              <%= link_to 'Back', :back %>
+          </div>
+  <% end %>
+          
+  <div align="right">
+    
+          
+
+    <% if user_signed_in? %>
               <%= current_user.name.present? ? "Hello, "+current_user.name + " " : current_user.email+"  " %>  
               <%= link_to 'Profile', user_path(current_user) %>
             <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
             <%= link_to 'Add book', new_admin_book_path %><br>
 
-        <% else %>
+    <% else %>
             <%= link_to 'Sign in', new_user_session_path %>
             <%= link_to 'Register', new_user_registration_path %><br>
-  <% end %>
-  
+    <% end %>
+   <%= form_with url: search_path, local: true, method: :get do |form| %>
+      <%= form.text_field :q,:size =>"50", placeholder: "Search", data:{behavior: "autocomplete"} %>
+      <%= form.button "Search" %>
+    <% end %>
+
+  </div>
 
   <p class="notice"><%#= notice %></p>
   <p class="alert"><%#= alert %></p>
     <%= yield %>
+    <footer>
+        <div id="copyright">
+          <p>&#9400; 2017 bookboard.od.ua<p>
 
+        </div>
+        <div align="right">
+              
+              <div class="container">
+                  <%= link_to 'About us', root_path %>
+                  
+              </div>
+              <div class="container">
+                  <%= link_to 'Contacts', root_path %>
+                  
+              </div>
+              <div class="container">
+                  <%= link_to 'Our team', root_path %>
+                  
+              </div>
+              <div class="container">
+                  <%= link_to 'Rules', root_path %>
+                  
+              </div>
+        </div>
+        
+    </footer>
   </body>
 </html>
