@@ -17,7 +17,13 @@
       	<div>
       		<%= image_tag book.image.url(:thumb) if book.image? %><br>
       		<%= link_to book.title, book_path(book) %><br>
-      		<%= "Added "+book.created_at.strftime("%e %B") %> 
+      		<% if book.available? %>
+          			<%= "(available now)" %>
+    		<%else %>
+          			<%= "(busy now)" %>
+  			<% end %>
+      		 <br>
+      		<%= "Added "+book.created_at.strftime("%e %B")+" to " %> <%= link_to book.location.name , location_path(book.location)%> 
 
       	</div>
       	<hr>

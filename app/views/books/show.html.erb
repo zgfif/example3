@@ -1,10 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+<%#= "bla bla" %>
   <strong>Title:</strong>
   <%= @book.title %>
 </p>
-
+<p>
+    
+    <strong>Status:</strong>
+  <% if @book.available? %>
+          <%= "available now" %>
+    <%else %>
+          <%= "busy now" %>
+  <% end %>
+</p>
 <p>
   <strong>Language:</strong>
   <%= @book.language %>

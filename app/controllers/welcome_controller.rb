@@ -23,7 +23,11 @@ class WelcomeController < ApplicationController
  		     @locations = @locations.limit(5)	
  		   }
  	  end
-
+def rule
+	#asdkfasl;dfkas';df
+	#asdf;lkjasdf;lkasd
+	#sad;flkjasdf;lkjasdf;l
+end
 =begin
 	@authors = Author.ransack(name_cont: params[:q]).result(distinct: true).limit(5)
 	@books = Book.ransack(title_cont: params[:q]).result(distinct: true).limit(5)
