@@ -25,6 +25,10 @@ document.addEventListener("turbolinks:load",function(){
 							listLocation: "locations",
 							header: "--Locations--",
 						},
+						{
+							listLocation: "users",
+							header: "--Users--",
+						},
 					],  
 		list: 	{ 
 					onChooseEvent: function()

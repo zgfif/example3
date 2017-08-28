@@ -60,7 +60,7 @@
   </div>
   <div class="field">
     <%= form.label :holder_id %>
-    <%= form.collection_select(:holder_id, User.all, :id, :name_with_initial, :prompt=> 'select holder', :selected => nil) %>
+    <%= form.collection_select(:holder_id, User.all, :id, :name_with_initial, include_blank: 'no holder') %>
     <%#= form.collection_select(:user_id, User.all, :id, :name) %>
   </div>
   <div class="actions">

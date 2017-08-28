@@ -35,9 +35,10 @@
             <%= link_to 'Register', new_user_registration_path %><br>
     <% end %>
    <%= form_with url: search_path, local: true, method: :get do |form| %>
-      <%= form.text_field :q,:size =>"50", placeholder: "Search", data:{behavior: "autocomplete"} %>
+      <%= form.text_field :q, :size =>"50", placeholder: "Type book,author or location", data:{behavior: "autocomplete"}, $query => :q %>
       <%= form.button "Search" %>
     <% end %>
+
 
   </div>
 

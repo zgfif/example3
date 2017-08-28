@@ -11,36 +11,21 @@ class WelcomeController < ApplicationController
 	@books = Book.ransack(title_cont: params[:q]).result(distinct: true).limit(5)
 	@locations = Location.ransack(name_cont: params[:q]).result(distinct: true).limit(5)
 	@genres = Genre.ransack(genre_name_cont: params[:q]).result(distinct: true).limit(5)
-
+  # byebug
+  if current_user.admin?
+    @users = User.ransack(email_cont: params[:q]).result(distinct: true).limit(5)
+  end
 
  	  respond_to do |format|
     
  		   format.html{}
  		   format.json {
- 		     @authors = @authors.limit(5)
- 		     @books = @books.limit(5)
- 		     @genres = @genres.limit(5)
- 		     @locations = @locations.limit(5)	
+  #      @users
+ 	#	     @authors = @authors.limit(5)
+ 	#	     @books = @books.limit(5)
+ 	#	     @genres = @genres.limit(5)
+ 	#	     @locations = @locations.limit(5)	
  		   }
  	  end
-def rule
-	#asdkfasl;dfkas';df
-	#asdf;lkjasdf;lkasd
-	#sad;flkjasdf;lkjasdf;l
-end
-=begin
-	@authors = Author.ransack(name_cont: params[:q]).result(distinct: true).limit(5)
-	@books = Book.ransack(title_cont: params[:q]).result(distinct: true).limit(5)
-	@locations = Location.ransack(name_cont: params[:q]).result(distinct: true).limit(5)
-	@genres = Genre.ransack(genre_name_cont: params[:q]).result(distinct: true).limit(5)
-
-	# render json: {authors:[],books:[],locations:[],genres:[]} 	  
-=end	
   end
-=begin
-  	private
-	def force_json
-		request.format = :json
-	end
-=end
 end
