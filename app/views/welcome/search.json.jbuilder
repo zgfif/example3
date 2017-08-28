@@ -26,7 +26,7 @@ json.genres do
 	end
 end
 
-unless @users.nil?
+ # unless @users.nil?
 
 	json.users do
 		json.array!(@users) do |user|
@@ -35,4 +35,4 @@ unless @users.nil?
 		end
 	end
 
-end
+# end
