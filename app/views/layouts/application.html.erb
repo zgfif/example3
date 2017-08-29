@@ -37,7 +37,7 @@
     <% end %>
    <%= form_with url: search_path, local: true, method: :get do |form| %>
       <%= form.text_field :q, :size =>"50", placeholder: "Type book,author or location", data:{behavior: "autocomplete"} %>
-      <%= form.button "Search" %>
+      <%#= form.button "Search" %>
     <% end %>
 
 

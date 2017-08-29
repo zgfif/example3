@@ -1,1 +1,19 @@
-<h1>Search Results for "<%= params[:q] %>" </h1>
+<% if params[:q].present? %>
+<h1>Search Results for "<%= params[:q] %>" </h1> 
+<% else %>
+ <h1><%= "Please, type anything" %> </h1>
+<% end %>
+<div>
+		<h2>Books</h2>	
+
+</div>
+<div>
+	<h2>Authors</h2>
+</div>
+<div>
+	<h2>Categories</h2>
+</div>
+
+<div>
+	<h2>Locations</h2>
+</div>
