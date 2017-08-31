@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Genres</h1>
-<% if user_signed_in? %>
+<% if user_signed_in?&&current_user.admin? %>
         <%= link_to 'Add new genre', new_admin_genre_path %>
 <% end %>
 <table>
@@ -16,8 +16,8 @@
     <% @genres.each do |genre| %>
       <tr>
         <td><%= genre.genre_name %></td>
-        <td><%= link_to 'Show', genre %></td>
-        <% if user_signed_in? %>
+        <td><%= link_to 'More', genre %></td>
+        <% if user_signed_in?&&current_user.admin? %>
                 <td><%= link_to 'Edit', edit_admin_genre_path(genre) %></td>
                 <td><%= link_to 'Destroy', admin_genre_path(genre), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>

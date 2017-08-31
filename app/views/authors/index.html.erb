@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Authors</h1>
-  <% if user_signed_in? %>
+  <% if user_signed_in?&&current_user.admin? %>
         <%= link_to 'Add new author', new_admin_author_path %>
   <% end %>      
 <table>
@@ -19,7 +19,7 @@
         <td><%= author.name %></td>
         <td><%= author.surname %></td>
         <td><%= link_to 'Show', author %></td>
-        <% if user_signed_in? %>
+        <% if user_signed_in?&&current_user.admin? %>
               <td><%= link_to 'Edit', edit_admin_author_path(author) %></td>
               <td><%= link_to 'Destroy', admin_author_path(author), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>      
