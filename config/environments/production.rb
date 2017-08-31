@@ -91,8 +91,8 @@ Rails.application.configure do
   # Default Mailer Host
   # Rails.application.routes.default_url_options[:host] = 'booksget.herokuapp.com'
   config.action_mailer.raise_delivery_errors = true
-  # config.action_mailer.default_url_options = { :host => 'booksget.herokuapp.com' }  
-  config.action_mailer.default_url_options = { :host => 'smtp.gmail.com' }  
+  config.action_mailer.default_url_options = { :host => 'booksget.herokuapp.com' }  
+  # config.action_mailer.default_url_options = { :host => 'smtp.gmail.com' }  
   config.action_mailer.delivery_method = :smtp  
   config.action_mailer.perform_deliveries = true  
   config.action_mailer.raise_delivery_errors = false  
