@@ -21,9 +21,7 @@
   </div>
   <div class="field">
     <%= form.label :language %>
-    <%= form.select(:language, [['русский'], ['английский']]) %>
-
-    <%#= form.text_field :language, id: :book_language %>
+    <%= form.select(:language, [['русский'], ['английский']]) %>   
   </div>
 
   <div class="field">
@@ -39,24 +37,56 @@
 
   <div class="field">
     <%= form.label :author_id %>
-    <%= form.collection_select(:author_id, Author.all, :id, :name_with_initial) %>
-    <%#= form.collection_select(:author_id, Author.all, :id, :name) %>
-    
+    <script>
+        function newAuthor() 
+          {
+            var acc = document.getElementsByName('book[author_id]')[0].value;
+            if (acc == "new")
+              {
+                var url = "/admin/authors/new";
+                window.location.replace(url);
+              }                
+          }
+    </script>
+
+    <%= form.select(:author_id, Author.all.collect {|p| [ p.name+" "+p.surname, p.id ] } + [ ['add new author', 'new']],{},{:onchange => "newAuthor();"}) %>    
   </div>
 
   <div class="field">
     <%= form.label :genre_id %>
-    <%#= form.text_field :genre_id, id: :book_genre_id %>
-    <%= form.collection_select(:genre_id, Genre.all, :id, :genre_name) %>
+    <script>
+        function newGenre() 
+          {
+            var acc = document.getElementsByName('book[genre_id]')[0].value;
+            if (acc == "new")
+              {
+                var url = "/admin/genres/new";
+                window.location.replace(url);
+              }                
+          }
+    </script>
+    <%= form.select(:genre_id, Genre.all.collect {|p| [ p.genre_name, p.id ] } + [ ['add new genre', 'new']],{},{:onchange => "newGenre();"}) %>
+    <%#= form.collection_select(:genre_id, Genre.all, :id, :genre_name) %>
   </div>
   <div class="field">
     <%= form.label :location_id %>
-    <%#= form.text_field :genre_id, id: :book_genre_id %>
-    <%= form.collection_select(:location_id, Location.all, :id, :name) %>
+    <%#= form.collection_select(:location_id, Location.all, :id, :name) %>
+    <script>
+        function newLocation() 
+          {
+            var acc = document.getElementsByName('book[location_id]')[0].value;
+            if (acc == "new")
+              {
+                var url = "/admin/locations/new";
+                window.location.replace(url);
+              }                
+          }
+    </script>
+    <%= form.select(:location_id, Location.all.collect {|p| [ p.name, p.id ] } + [ ['add new location', 'new']],{},{:onchange => "newLocation();"}) %>
   </div>
   <div class="field">
-    <%= form.label :rating %>
-    <%= form.text_field :rating, id: :book_rating %>
+    <%#= form.label :rating %>
+    <%#= form.text_field :rating, id: :book_rating %>
   </div>
   <div class="field">
     <%= form.label :holder_id %>
