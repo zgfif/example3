@@ -70,3 +70,9 @@ group :production do
   gem 'rails_12factor'
   
 end
+
+gem 'bootstrap', '~> 4.0.0.beta'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
