@@ -1,7 +1,7 @@
 class Admin::UsersController < Admin::AdminController
   # before_action :authenticate_user!#, except: [:index,:show]
   before_action :set_user, only: [:edit, :update, :destroy]
-
+   
   # GET /users
   # GET /users.json
 =begin

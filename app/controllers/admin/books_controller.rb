@@ -1,7 +1,7 @@
 class Admin::BooksController < Admin::AdminController
   # before_action :authenticate_user!, except: [:index,:show]
   before_action :set_book, only: [:edit, :update, :destroy]
- 
+  # before_action :check_admin 
 =begin 
   # GET /books
   # GET /books.json
