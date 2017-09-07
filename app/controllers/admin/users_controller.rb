@@ -1,10 +1,19 @@
 class Admin::UsersController < Admin::AdminController
   # before_action :authenticate_user!#, except: [:index,:show]
   before_action :set_user, only: [:edit, :update, :destroy]
-   
+  before_action :check_admin, on: [:show,:edit], unless: :own_page?
+
+    def own_page?
+      # puts "hello"
+
+      if user_signed_in? and current_user.id == params[:id].to_i
+        true
+      end
+    end 
+  # before_action :authenticate_user!, except: :new   
   # GET /users
   # GET /users.json
-=begin
+
   def index
     @users = User.all
   end
@@ -12,8 +21,9 @@ class Admin::UsersController < Admin::AdminController
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find(params[:id])
   end
-=end
+
   # GET /users/new
   def new
     @user = User.new
@@ -44,7 +54,7 @@ class Admin::UsersController < Admin::AdminController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to admin_user_path(@user), notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -58,7 +68,7 @@ class Admin::UsersController < Admin::AdminController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to admin_users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

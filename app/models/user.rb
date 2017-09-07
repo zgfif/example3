@@ -10,9 +10,9 @@ class User < ApplicationRecord
 	has_many :locations, :through => :books
 	has_many :authors, :through => :books
 	has_many :genres, :through => :books
-	
+		
 	before_update :calculate_balance
-
+  
 	def calculate_balance
 		self.balance = added.to_i - held.to_i							
 	end
@@ -23,5 +23,8 @@ class User < ApplicationRecord
     	 else
     	 "#{email}"
     	 end    	
-  	end	
+  	end
+  	
+
+
 end

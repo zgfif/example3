@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/about' => 'pages#about'
 
   resources :books, only: [:index,:show]
-  resources :users, only: [:index,:show]
+  # resources :users, only: [:index,:show]
   resources :authors, only: [:index, :show]
   resources :genres, only: [:index, :show]
   resources :locations, only:[:index, :show]
@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   	resources :books, except: [:index,:show]
     resources :authors, except: [:index, :show]
     resources :genres, except: [:index,:show]
-    resources :users, except: [:index, :show]
+    resources :users#, except: [:index, :show]
     resources :locations, except: [:index,:show]
   end
 end

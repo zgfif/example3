@@ -28,8 +28,9 @@
     <% if user_signed_in? %>
 
               <%= current_user.name.present? ? "Hello, "+current_user.name+",": "Hello, "+current_user.email+"  " %>
-              <%= current_user.admin? ? "you're admin": "" %>  
-              <%= link_to 'Profile', user_path(current_user) %>
+              <%= current_user.admin? ? "you're admin" : "" %>
+              <%= link_to 'Statistics', root_path %>  
+              <%= link_to 'Profile', admin_user_path(current_user) %>
             <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
             <%= link_to 'Add book', new_admin_book_path %><br>
 

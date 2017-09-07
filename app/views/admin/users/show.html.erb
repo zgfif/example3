@@ -1,0 +1,52 @@
+<!-- <p id="notice"><%= notice %></p> -->
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Surname:</strong>
+  <%= @user.surname %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @user.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Balance:</strong>
+  <%= @user.balance %>
+</p>
+<p>
+  <strong><%= @user.name %> added</strong>
+  <%= @user.added %> books
+</p>
+<p>
+  <strong>Took from location:</strong>
+  <%= @user.held %>
+</p>
+<p>
+<p>
+	Added by <%= @user.name %>:<br>
+	<% @user.added_books.each do |added_book| %>
+		
+		|<%= link_to added_book.title, book_path(added_book) %>|  
+	<% end %> 
+</p>
+<p>
+	Held by <%= @user.name %>:<br>
+	<% @user.held_books.each do |held_book| %>
+		
+	<%= link_to held_book.title, book_path(held_book) %>|
+	<% end %> 
+</p>
+
+<%= link_to 'Edit profile', edit_admin_user_path(@user) %> |
+<%= link_to 'Back', :back %>
