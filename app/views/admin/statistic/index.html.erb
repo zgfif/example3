@@ -1,0 +1,22 @@
+<!-- <h1>Statistics</h1> -->
+<h4>Total count of users: <%= @user_count %></h4>
+
+	
+<h4>Total added books: <%= @book_count %>. To locations:</h4>
+<div>
+		
+		<% @locations.each do |location| %>
+			<p><%= location.name+": "+Book.where(location_id: location.id).count.to_s %></p>
+		<% end %>	
+</div>
+<div>
+	<h4>Total available books: <%= @book_available_count %></h4>
+
+</div>
+<div>
+	<h4>Total held books: <%= @book_held_count %></h4>
+</div>
+ 
+
+
+	

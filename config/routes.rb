@@ -21,5 +21,7 @@ Rails.application.routes.draw do
     resources :genres, except: [:index,:show]
     resources :users#, except: [:index, :show]
     resources :locations, except: [:index,:show]
+     resources :statistic, only: :index
+    
   end
 end
