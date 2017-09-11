@@ -40,7 +40,7 @@ class Admin::UsersController < Admin::AdminController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to admin_user_path(@user), notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -81,6 +81,6 @@ class Admin::UsersController < Admin::AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :surname, :phone, :email, :balance, :added, :held)
+      params.require(:user).permit(:name, :surname, :phone, :email, :balance, :added, :held,:password)
     end
 end

@@ -4,6 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :confirmable, :validatable
 
+    attr_accessor :password_confirmation 
+  	# attr_protected :password       
+  	 validates_confirmation_of :password
+
+
 	has_many :added_books, :class_name => 'Book', :foreign_key => 'user_id'
 	has_many :held_books, :class_name => 'Book', :foreign_key => 'holder_id'
 	
