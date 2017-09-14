@@ -92,7 +92,7 @@ Rails.application.configure do
   # Rails.application.routes.default_url_options[:host] = 'booksget.herokuapp.com'
   config.action_mailer.raise_delivery_errors = true
     
-    config.action_mailer.default_url_options = { :host } 
+    config.action_mailer.default_url_options = { :host =>'' } 
   # config.action_mailer.default_url_options = { :host => 'booksget.herokuapp.com' }  testing by Vladimir
   # config.action_mailer.default_url_options = { :host => 'smtp.gmail.com' }  don't uncomment
 =begin
