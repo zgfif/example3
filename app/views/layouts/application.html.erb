@@ -7,73 +7,124 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel ="stylesheet" href="../../assets/stylesheets/app.css">
+    <!-- <link rel ="stylesheet" href="../../assets/stylesheets/app.css"> -->
     <%= favicon_link_tag 'favicon.ico' %>
   </head>
 
   <body>
-  <p class="notice"><%= notice %> </p>
-  <p class="alert" ><%= alert %></p>
-  <% unless current_page?(root_path) %>
+      <div>
+                  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                        <a class="navbar-brand" href= <%= root_path %> >Booksget</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                  <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                          <ul class="navbar-nav mr-auto">
+                              <li class="nav-item active">
+                                  <a class="nav-link" href= <%= root_path %>   > Home
+                                        <span class="sr-only">
+                                                (current)
+                                        </span>
+                                  </a>
+                              </li>
+                              <li class="nav-item active">
+                                  <%= link_to 'Back', :back, class: "nav-link" %>
+                              </li>  
+                          </ul>
+
+                          <ul class="navbar-nav">
+                            <% if user_signed_in? %>
+                                <li class="nav-item nav-link active">
+                                    <%= current_user.name.present? ? "Hello, "+current_user.name : "Hello, "+current_user.email+"  "  %>
+                                </li>
+                                <li class="nav-item nav-link active">
+                                  <%= current_user.admin? ? "You're admin" : "" %>
+                                </li>                                               
+                                <% if current_user.admin? %> 
+                                
+                                      <%= link_to 'Statistics ', admin_statistic_index_path, class: "nav-link active" %>
+                                                                    
+                                <% end %>
+                                <li class="nav-item" >
+                                     <%= link_to ' Profile', admin_user_path(current_user) , class: "nav-link active" %> 
+                                </li>  
+                                <li class="nav-item">
+                                  <%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } , class: "nav-link disabled" %>
+                                </li>
+                                      <%= link_to 'Add book', new_admin_book_path, class: 'btn btn-outline-primary pull-xs-right' %>
+
+                              <% else %>
+                                  <li class="nav-item">
+                                        <%= link_to 'Sign in', new_user_session_path, class: "nav-link active" %>
+                                  </li>
+                                  <li>
+                                         <%= link_to 'Register', new_user_registration_path, class: "nav-link active" %>
+                                  </li>  
+                                     
+                              <% end %>    
+
+
+
+
+                              <li class="nav-item">
+                                  
+                              </li>
+                          </ul>
+                        </div>
+                                  
+                                        
+                     
+                        <!-- <%= link_to 'Add book', new_admin_book_path, class: 'btn btn-outline-primary pull-xs-right' %> -->
+                         
+                  </nav> 
+                  <div class="container search_margin_top">
+                    <%= form_with url: search_path, local: true, method: :get do |form| %>
+                                <%= form.text_field :q, :size =>"50", placeholder: "Type book,author or location", data:{behavior: "autocomplete"} %>
+                                <%#= form.button "Search" %>
+                              <% end %>
+        
+                  </div>
+             
+      </div>
+      
+      <p class="notice"><%= notice %> </p>
+      <p class="alert" ><%= alert %></p>
+     <!--  <% unless current_page?(root_path) %>
           <div>
               <%= link_to 'Home', root_path %>
               <%= link_to 'Back', :back %>
           </div>
-  <% end %>
+      <% end %> -->
           
-  <div align="right">
-    
-          
+     
 
-    <% if user_signed_in? %>
+      <p class="notice"><%#= notice %></p>
+      <p class="alert"><%#= alert %></p>
 
-              <%= current_user.name.present? ? "Hello, "+current_user.name+",": "Hello, "+current_user.email+"  " %>
-              <%= current_user.admin? ? "you're admin" : "" %>
-              <%= link_to 'Statistics', admin_statistic_index_path %>  
-              <%= link_to 'Profile', admin_user_path(current_user) %>
-            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %>
-            <%= link_to 'Add book', new_admin_book_path %><br>
-
-    <% else %>
-            <%= link_to 'Sign in', new_user_session_path %>
-            <%= link_to 'Register', new_user_registration_path %><br>
-    <% end %>
-   <%= form_with url: search_path, local: true, method: :get do |form| %>
-      <%= form.text_field :q, :size =>"50", placeholder: "Type book,author or location", data:{behavior: "autocomplete"} %>
-      <%#= form.button "Search" %>
-    <% end %>
+    <div class="container floating">
+         <%= yield %>
+    </div>
+     
 
 
-  </div>
-
-  <p class="notice"><%#= notice %></p>
-  <p class="alert"><%#= alert %></p>
-    <%= yield %>
-    <footer>
-        <div id="copyright">
-          <p>&#9400; 2017 bookboard.od.ua<p>
-
-        </div>
-        <div align="right">
+    <footer class="container floating" >
               
-              <div class="container">
-                  <%= link_to 'About us', about_path %>
-                  
-              </div>
-              <div class="container">
-                  <%= link_to 'Contacts', contact_path %>
-                  
-              </div>
-              <div class="container">
-                  <%= link_to 'Our team', our_team_path %>
-                  
-              </div>
-              <div class="container">
-                  <%= link_to 'Rules', rule_path %>
-                  
-              </div>
-        </div>
-        
+      <p>&#9400; 2017 bookboard.od.ua<p>              
+      <!-- <button class="btn btn-default btn-lg pull-xs-right">
+                  <a href="#">Back to top</a>
+      </button>
+       --><p>
+        <a href="https://www.github/zgfif/example3">Booksget</a> 2017 
+      </p>
+      <p>
+        Coded by: Pavel Bratanov
+      </p>
+                <%= link_to 'About us', about_path %>      
+                <%= link_to 'Contacts', contact_path %>     
+                <%= link_to 'Our team', our_team_path %>  
+                <%= link_to 'Rules', rule_path %>
+             
     </footer>
   </body>
 </html>
