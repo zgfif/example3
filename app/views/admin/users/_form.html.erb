@@ -10,45 +10,47 @@
       </ul>
     </div>
   <% end %>
+  <div class="form-row" >
+          <div class="form-group col-md-6">
+            <%= form.label :name, class: "col-form-label", class: "col-form-label" %>
+            <%= form.text_field :name, id: :user_name, placeholder: "First name", class: "form-control" %>
+          </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :user_name %>
+          <div class="form-group col-md-6">
+            <%= form.label :surname, class: "col-form-label"  %>
+            <%= form.text_field :surname, id: :user_surname, placeholder: "Last name",class: "form-control" %>
+          </div>
   </div>
 
-  <div class="field">
-    <%= form.label :surname %>
-    <%= form.text_field :surname, id: :user_surname %>
+  <div  class="form-row">
+      <div class="form-group col-md-6">
+        <%= form.label :phone %>
+        <%= form.text_field :phone, id: :user_phone, placeholder: "Phone number", class: "form-control" %>
+      </div>
+
+
+      <div class="form-group col-md-6">
+        <%= form.label :email  %>
+        <%= form.text_field :email, id: :user_email, placeholder: "e-mail", class: "form-control" %>
+      </div>
   </div>
 
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone, id: :user_phone %>
-  </div>
+ <div class="form-row">
+    <div class="form-group col-md-6">
+        <%= form.label :password %>
+        <!-- <% if @minimum_password_length %> -->
+        <!-- <em>(<%= @minimum_password_length %> characters minimum)</em> -->
+        <!-- <% end %><br /> -->
+        <%= form.password_field :password, autocomplete: "off", placeholder: "password", class: "form-control" %>
+    </div>
 
+    <div class="form-group col-md-6">
+        <%= form.label :password_confirmation %><br />
+        <%= form.password_field :password_confirmation, autocomplete: "off", placeholder: "repeat password", class: "form-control" %>
+    </div>
+ </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :user_email %>
-  </div>
-
-
-
-  <div class="field">
-    <%= form.label :password %>
-    <!-- <% if @minimum_password_length %> -->
-    <!-- <em>(<%= @minimum_password_length %> characters minimum)</em> -->
-    <!-- <% end %><br /> -->
-    <%= form.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :password_confirmation %><br />
-    <%= form.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-
-
+  
 
 
   <div class="field">
@@ -63,6 +65,6 @@
     <%= form.hidden_field :held, id: :user_added %>
   </div> 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class:'btn btn-primary' %>
   </div>
 <% end %>

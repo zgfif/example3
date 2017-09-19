@@ -63,13 +63,6 @@
                                   </li>  
                                      
                               <% end %>    
-
-
-
-
-                              <li class="nav-item">
-                                  
-                              </li>
                           </ul>
                         </div>
                                   
@@ -80,51 +73,48 @@
                   </nav> 
                   <div class="container search_margin_top">
                     <%= form_with url: search_path, local: true, method: :get do |form| %>
-                                <%= form.text_field :q, :size =>"50", placeholder: "Type book,author or location", data:{behavior: "autocomplete"} %>
+                                <%= form.text_field :q, :size =>"50", placeholder: "Type book,author or location", data:{behavior: "autocomplete"}, class: "form-control" %>
                                 <%#= form.button "Search" %>
                               <% end %>
         
                   </div>
              
       </div>
-      
-      <p class="notice"><%= notice %> </p>
-      <p class="alert" ><%= alert %></p>
-     <!--  <% unless current_page?(root_path) %>
+<!--       
+      <% unless current_page?(root_path) %>
           <div>
               <%= link_to 'Home', root_path %>
               <%= link_to 'Back', :back %>
           </div>
-      <% end %> -->
+      <% end %> 
           
-     
-
-      <p class="notice"><%#= notice %></p>
-      <p class="alert"><%#= alert %></p>
+ -->     
+    
+      <p class="notice"><%= notice %> </p>
+      <p class="alert" ><%= alert %></p>   
 
     <div class="container floating">
+      
          <%= yield %>
     </div>
      
 
 
-    <footer class="container floating" >
+    <footer class="floating" >
               
-      <p>&#9400; 2017 bookboard.od.ua<p>              
-      <!-- <button class="btn btn-default btn-lg pull-xs-right">
+      <!-- <p>&#9400; 2017 bookboard.od.ua</p>               -->
+       <!-- <button class="btn btn-default btn-lg pull-xs-right">
                   <a href="#">Back to top</a>
       </button>
-       --><p>
-        <a href="https://www.github/zgfif/example3">Booksget</a> 2017 
-      </p>
-      <p>
-        Coded by: Pavel Bratanov
-      </p>
-                <%= link_to 'About us', about_path %>      
-                <%= link_to 'Contacts', contact_path %>     
-                <%= link_to 'Our team', our_team_path %>  
-                <%= link_to 'Rules', rule_path %>
-             
+       -->       
+       <span><a href="http://github.com/zgfif/example3">Booksget</a> 2017 </span> 
+      <span><%= link_to 'About us', about_path %>  </span>
+        <!-- Coded by: Pavel Bratanov -->
+      <span> <%= link_to 'Contacts', contact_path %> </span>
+      <span><%= link_to 'Our team', our_team_path %>  </span>       
+       <span><%= link_to 'Rules', rule_path %></span> 
+        
+     
     </footer>
   </body>
 </html>

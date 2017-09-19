@@ -2,7 +2,7 @@
 
 <h1>Books</h1>
 <% if user_signed_in?&&current_user.admin? %>
-<%= link_to 'Add book', new_admin_book_path %>
+<%= link_to 'Add book', new_admin_book_path, class: "btn btn-outline-primary" %>
 <% end %>
 <table>
   <thead>
@@ -61,4 +61,4 @@
 <br>
 
 
-<%= link_to 'Back', root_path %>
+<%= link_to 'Back', root_path, class: "btn btn-secondary" %>

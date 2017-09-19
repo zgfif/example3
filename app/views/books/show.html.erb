@@ -1,10 +1,11 @@
 <!-- <p id="notice"><%= notice %></p> -->
 
-<p>
+<!-- <p> -->
 <%#= "bla bla" %>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p>
+
+  <!-- <strong>Title:</strong> -->
+ <h2><%= @book.title %></h2> 
+<!-- </p> -->
 <p>
     
     <strong>Status:</strong>
@@ -62,5 +63,5 @@
   <% end %>
 </p>
 
-<%= link_to 'Edit', edit_admin_book_path(@book) %> |
-<%= link_to 'Back', :back %>
+<%= link_to 'Edit', edit_admin_book_path(@book), class: "btn btn-warning" %> 
+<%= link_to 'Back', :back, class: "btn btn-secondary" %>

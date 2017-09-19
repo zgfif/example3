@@ -11,31 +11,31 @@
     </div>
   <% end %>
 <!-- <div class= "form-group"> -->
-  <div class="field">
+  <div class="form-group">
     <%= form.label :title %>
     <%= form.text_field :title, id: :book_title , class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%#= form.label :image %>
     <%= form.file_field :image, id: :book_image %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= form.label :language %>
-    <%= form.select(:language, [['русский'], ['английский']]) %>   
+    <%= form.select(:language, [['русский'], ['английский']],{}, {:class => 'form-control'})%>   
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :description %>
-    <%= form.text_area :description, id: :book_description %>
+    <%= form.text_area :description, id: :book_description, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :user_id %>
-    <%= form.collection_select(:user_id, User.all, :id, :name_with_initial) %>
+    <%= form.collection_select(:user_id, User.all, :id, :name_with_initial ,{}, {:class => 'form-control'}) %>
     <%#= form.collection_select(:user_id, User.all, :id, :name) %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :author_id %>
     <script>
         function newAuthor() 
@@ -52,7 +52,7 @@
     <%= form.select(:author_id, Author.all.collect {|p| [ p.name+" "+p.surname, p.id ] } + [ ['add new author', 'new']],{},{:onchange => "newAuthor();"}) %>    
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :genre_id %>
     <script>
         function newGenre() 
@@ -68,7 +68,7 @@
     <%= form.select(:genre_id, Genre.all.collect {|p| [ p.genre_name, p.id ] } + [ ['add new genre', 'new']],{},{:onchange => "newGenre();"}) %>
     <%#= form.collection_select(:genre_id, Genre.all, :id, :genre_name) %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= form.label :location_id %>
     <%#= form.collection_select(:location_id, Location.all, :id, :name) %>
     <script>
@@ -88,7 +88,7 @@
     <%#= form.label :rating %>
     <%#= form.text_field :rating, id: :book_rating %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= form.label :holder_id %>
     <%= form.collection_select(:holder_id, User.all, :id, :name_with_initial, include_blank: 'no holder') %>
     <%#= form.collection_select(:user_id, User.all, :id, :name) %>
@@ -98,3 +98,4 @@
     <%= link_to 'Back', :back, class:'btn btn-outline-secondary'%>
   </div>
 <% end %>
+fasdfasdfasw

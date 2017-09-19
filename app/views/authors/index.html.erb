@@ -2,7 +2,7 @@
 
 <h1>Authors</h1>
   <% if user_signed_in?&&current_user.admin? %>
-        <%= link_to 'Add new author', new_admin_author_path %>
+        <%= link_to 'Add new author', new_admin_author_path, class: "btn btn-outline-primary" %>
   <% end %>      
 <table>
   <thead>
@@ -29,5 +29,5 @@
 </table>
 
 <br>
-<%= link_to 'Back', root_path %>
+<%= link_to 'Back', root_path, class: "btn btn-secondary" %>
 
