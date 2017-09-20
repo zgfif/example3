@@ -11,12 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :genre_name %>
-    <%= form.text_field :genre_name, id: :genre_genre_name %>
+    <%= form.text_field :genre_name, id: :genre_genre_name, placeholder: "genre of book", class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>

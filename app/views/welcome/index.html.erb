@@ -16,44 +16,37 @@
 </section>
 
 <h1>Recent books</h1>
-
-      
-
-
-
-<div class="card-deck">
-	<% @books.each do |book| %>
-      	<div class= "card">
-      		<%= image_tag book.image.url(:large), class: "card-img-top" if book.image? %><br>
-          <div class="card-body">
-            <h5 class="card-title">
-                <%= link_to book.title, book_path(book) %>
-            </h5>
+    
+<div class="card-deck d-flex flex-nowrap">
+	   <% @books.each do |book| %>
+      	<div class= "card parrent_bottom">
+      		  <%= image_tag book.image.url(:large), class: "card-img-top" if book.image? %><br>
+            <div class="align_bottom">
+                <div class="card-body text-center">
+                    <h5 class="card-title">
+                        <%= link_to book.title, book_path(book) %>
+                    </h5>
                 
-          <% if book.available? %>
-                <%#= "(available now) " %> 
-                <div>
-                    <span class="badge badge-primary">available now</span>
-                </div>
-                
-        <%else %>
-                <%#= "(busy now)" %> 
-                <div>
-                    <span class="badge badge-secondary">busy now</span>  
-                </div>
-                
-        <% end %>
-        <p class="card-text">
-          <%= "Added "+book.created_at.strftime("%e %B")+" to " %> <%= link_to book.location.name , location_path(book.location)%> 
-        </p>  
-          
-  
-          </div>
-
-
-
-      		
+                  <% if book.available? %>
+                      <%#= "(available now) " %> 
+                      <div>
+                          <span class="badge badge-primary">available now</span>
+                      </div>
+                      
+                  <%else %>
+                      <%#= "(busy now)" %> 
+                      <div>
+                          <span class="badge badge-secondary">busy now</span>  
+                      </div>
+                      
+                  <% end %>
+                  <p class="card-text">
+                    <%= "Added "+book.created_at.strftime("%e %B")+" to " %> <%= link_to book.location.name , location_path(book.location)%> 
+                  </p>  
+          </div>   
+            </div>
+               		
       	</div>
       	<!-- <hr> -->
-	<% end %>
+	   <% end %>
 </div>

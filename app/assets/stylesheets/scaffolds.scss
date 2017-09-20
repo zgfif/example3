@@ -28,7 +28,7 @@ a {
 
   &:hover {
     color: #fff;
-    background-color: #000;
+    background-color: none;
   }
 }
 
@@ -81,4 +81,9 @@ div {
 
 label {
   display: block;
+}
+a:hover{
+  //background-color: grey;
+  opacity: 0.4;
+  text-decoration:none;
 }
