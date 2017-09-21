@@ -11,14 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :author_name %>
+    <%= form.text_field :name, id: :author_name, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :surname %>
-    <%= form.text_field :surname, id: :author_surname %>
+    <%= form.text_field :surname, id: :author_surname, class: "form-control" %>
   </div>
 
   <div class="actions">
