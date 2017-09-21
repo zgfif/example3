@@ -20,8 +20,11 @@
                         </button>
 
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
                           <ul class="navbar-nav mr-auto">
+                          <% unless current_page?(root_path) %>
                               <li class="nav-item active">
+
                                   <a class="nav-link" href= <%= root_path %>   > Home
                                         <span class="sr-only">
                                                 (current)
@@ -31,6 +34,7 @@
                               <li class="nav-item active">
                                   <%= link_to 'Back', :back, class: "nav-link" %>
                               </li>  
+                              <% end %>
                           </ul>
 
                           <ul class="navbar-nav">
@@ -90,9 +94,9 @@
           
  -->     
     
-      <p class="notice"><%= notice %> </p>
+      <p class="notice "><%= notice %> </p>
       <p class="alert" ><%= alert %></p>   
-
+    
     <div class="container floating">
       
          <%= yield %>

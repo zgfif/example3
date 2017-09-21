@@ -4,7 +4,7 @@
   <% if user_signed_in?&&current_user.admin? %>
         <%= link_to 'Add new author', new_admin_author_path, class: "btn btn-outline-primary" %>
   <% end %>      
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>

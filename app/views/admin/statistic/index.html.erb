@@ -1,22 +1,47 @@
-<!-- <h1>Statistics</h1> -->
-<h4>Total count of users: <%= @user_count %></h4>
+<h1>Statistics</h1>
 
-	
-<h4>Total added books: <%= @book_count %> </h4>
-<p>To location(s):</p>
-<div>
+<table class="table">
+	<tr>
+		<td>Users</td>
+		<td>total count:</td>
+		<td><%= @user_count %></td>
+	</tr>
+	<tr >
+		<td rowspan="3">Books</td>
+		<td>total added:</td>
+		<td><%= @book_count %></td>
+	</tr>
+	<tr>
 		
-		<% @locations.each do |location| %>
-			<p><%= location.name+": "+Book.where(location_id: location.id).count.to_s %></p>
-		<% end %>	
-</div>
-<div>
-	<h4>Total available books: <%= @book_available_count %></h4>
+		<td>total held:</td>
+		<td><%= @book_held_count %></td>
+	</tr>
+	<tr>
+		
+		<td>total available:</td>
+		<td><%= @book_available_count %></td>
+	</tr>
+	<tr>
+		<td>Locations</td>
+		<td>Count</td>
+		<td><%= @count_locations %></td>
+	</tr>
+	<tr>
+		<td rowspan= <%= @count_locations+1 %> >Count of books by locations</td>
+	</tr>
+		
+	<% @locations.each do |location| %>
+		<tr>
+			<td>
+				<%= location.name %>
+			</td>
+			<td>
+				<%= Book.where(location_id: location.id).count.to_s %>
+			</td>
+		</tr>
+	<% end %>							
+</table>
 
-</div>
-<div>
-	<h4>Total held books: <%= @book_held_count %></h4>
-</div>
  
 
 

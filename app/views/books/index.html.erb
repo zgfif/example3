@@ -4,7 +4,8 @@
 <% if user_signed_in?&&current_user.admin? %>
 <%= link_to 'Add book', new_admin_book_path, class: "btn btn-outline-primary" %>
 <% end %>
-<table>
+<div class="container">
+      <table class="table">
   <thead>
     <tr>
       <th>Title</th>
@@ -57,6 +58,10 @@
     <% end %>
   </tbody>
 </table>
+
+
+</div>
+
 
 <br>
 

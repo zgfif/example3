@@ -4,7 +4,8 @@
 <% if user_signed_in?&&current_user.admin? %>
         <%= link_to 'Add new genre', new_admin_genre_path, class: "btn btn-outline-primary" %>
 <% end %>
-<table>
+<div class="container">
+      <table class="table">
   <thead>
     <tr>
       <th>Genre</th>
@@ -24,7 +25,9 @@
       </tr>
     <% end %>
   </tbody>
-</table>
+</table>  
+</div>
+
 
 <br>
 

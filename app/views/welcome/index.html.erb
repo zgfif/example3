@@ -1,15 +1,15 @@
 
 <!-- <h1>Bookboard</h1> -->
 <!-- <p>Find desired books</p> -->
-<section class="container">
+<section class="container nav justify-content-center font_nav">
     <% if user_signed_in? %>
-   <span><%= link_to 'Books', books_path %></span>  
+   <span><%= link_to 'Books', books_path, class: "nav-item nav-link" %></span>  
     <% if current_user.admin? %>
-           <span><%= link_to 'Users', admin_users_path %></span>
+           <span><%= link_to 'Users', admin_users_path, class: "nav-item nav-link" %></span>
      <% end %>     
-     <span><%= link_to 'Locations', locations_path %></span>
-     <span><%= link_to 'Genres', genres_path %></span> 
-    <span><%= link_to 'Authors', authors_path %></span>
+     <span><%= link_to 'Locations', locations_path, class: "nav-item nav-link" %></span>
+     <span><%= link_to 'Genres', genres_path, class: "nav-item nav-link" %></span> 
+    <span><%= link_to 'Authors', authors_path, class: "nav-item nav-link" %></span>
 
   <% end %>
 
@@ -50,3 +50,5 @@
       	<!-- <hr> -->
 	   <% end %>
 </div>
+<br>
+<h1>Our locations</h1>
