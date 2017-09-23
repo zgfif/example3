@@ -34,22 +34,22 @@
         <%= form.text_field :email, id: :user_email, placeholder: "e-mail", class: "form-control" %>
       </div>
   </div>
-
+<% if current_user.admin? %>
  <div class="form-row">
     <div class="form-group col-md-6">
         <%= form.label :password %>
         <!-- <% if @minimum_password_length %> -->
         <!-- <em>(<%= @minimum_password_length %> characters minimum)</em> -->
         <!-- <% end %><br /> -->
-        <%= form.password_field :password, autocomplete: "off", placeholder: "password", class: "form-control" %>
+        <%= form.password_field :password, autocomplete: "on", placeholder: "password", class: "form-control" %>
     </div>
-
+<!-- 
     <div class="form-group col-md-6">
         <%= form.label :password_confirmation %><br />
-        <%= form.password_field :password_confirmation, autocomplete: "off", placeholder: "repeat password", class: "form-control" %>
-    </div>
+        <%= form.password_field :password_confirmation, autocomplete: "on", autofill: true, placeholder: "repeat password", class: "form-control" %>
+    </div> -->
  </div>
-
+<% end %>
   
 
 

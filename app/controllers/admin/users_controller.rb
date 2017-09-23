@@ -52,7 +52,13 @@ class Admin::UsersController < Admin::AdminController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    if params[:user][:password].blank?&&params[:user][:password_confirmation].blank?
+              params[:user].delete :password
+              params[:user].delete :password_confirmation
+       end
     respond_to do |format|
+      
+
       if @user.update(user_params)
         format.html { redirect_to admin_user_path(@user), notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }

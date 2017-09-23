@@ -6,8 +6,9 @@ class User < ApplicationRecord
 
     attr_accessor :password_confirmation 
   	# attr_protected :password       
-  	 validates_confirmation_of :password
-
+  	 # validates_confirmation_of :password
+  	 # validates_confirmation_of :password, :password_confirmation, :on => :create
+  	validates :password, :password_confirmation, presence: true, on: :create
 
 	has_many :added_books, :class_name => 'Book', :foreign_key => 'user_id'
 	has_many :held_books, :class_name => 'Book', :foreign_key => 'holder_id'
