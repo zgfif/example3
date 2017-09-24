@@ -3,6 +3,7 @@ class WelcomeController < ApplicationController
   before_action :authenticate_user!, except: [:index,:show,:search]
   def index
   	@books = Book.order("created_at desc").limit(5)
+    @locations = Location.all
   end
 
   def search

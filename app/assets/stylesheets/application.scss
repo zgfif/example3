@@ -28,6 +28,7 @@ footer{
 	margin-top: 30px;
 	position: relative;
 	bottom: 0px;
+	padding: 30px 20px;
 }
 footer span{
 
@@ -47,4 +48,10 @@ text-decoration:none;
 }
 .card-img-top a:hover{
   opacity: 1;
+}
+.carousel{
+ //padding: 0 10%;
+ width: 70%;
+ padding: 0 20px;
+ margin:0 auto;	
 }

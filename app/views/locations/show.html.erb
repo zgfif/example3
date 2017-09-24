@@ -9,7 +9,9 @@
   <strong>Address:</strong>
   <%= @location.address %>
 </p>
-
+<div>
+  <%= image_tag @location.image.url(:large) if @location.image? %>
+</div>
 <p>
   <strong>Description:</strong>
   <%= @location.description %>
