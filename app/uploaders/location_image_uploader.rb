@@ -1,4 +1,4 @@
-class LocationUploader < CarrierWave::Uploader::Base
+class LocationImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
@@ -31,11 +31,15 @@ class LocationUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process resize_to_fit: [350, 120]
+    process resize_to_fit: [300, 150]
   end
-  version :large do
-    process resize_to_fit: [720, 350]
+   version :large do
+    process resize_to_fit: [600, 300]
   end
+
+
+
+
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_whitelist
@@ -45,7 +49,7 @@ class LocationUploader < CarrierWave::Uploader::Base
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   # def filename
-    # "something.jpg" if original_filename
+  #   "something.jpg" if original_filename
   # end
 
 end

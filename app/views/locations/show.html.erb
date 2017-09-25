@@ -10,7 +10,8 @@
   <%= @location.address %>
 </p>
 <div>
-  <%= image_tag @location.image.url(:large) if @location.image? %>
+  
+  <%= image_tag @location.picture.url(:large) if @location.picture? %>
 </div>
 <p>
   <strong>Description:</strong>
