@@ -12,7 +12,8 @@
   </head>
 
   <body>
-      <div>
+      <div class="content">
+            <div>
                   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                         <a class="navbar-brand" href= <%= root_path %> >Booksget</a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -83,35 +84,48 @@
         
                   </div>
              
-      </div>
-<!--       
-      <% unless current_page?(root_path) %>
-          <div>
-              <%= link_to 'Home', root_path %>
-              <%= link_to 'Back', :back %>
-          </div>
-      <% end %> 
-          
- -->     
-    
-      <p class="notice "><%= notice %> </p>
-      <p class="alert" ><%= alert %></p>   
-    
-    <div class="container floating">
-      
-         <%= yield %>
-    </div>
-     
-    <footer class="floating"  >
-           <span><a href="http://github.com/zgfif/example3">Booksget</a> 2017 </span> 
-      <span><%= link_to 'About us', about_path %>  </span>
+            </div>
+            <!--       
+                  <% unless current_page?(root_path) %>
+                      <div>
+                          <%= link_to 'Home', root_path %>
+                          <%= link_to 'Back', :back %>
+                      </div>
+                  <% end %> 
+                      
+             -->     
+            
+              <p class="notice ">
+                      <%= notice %> 
+              </p>
+              <p class="alert" >
+                      <%= alert %>
+              </p>   
+            
+            <div class="container floating">
+              
+                 <%= yield %>
+            </div>
+      </div>   
+      <footer class="footer floating">
+           <span>
+                <a href="http://github.com/zgfif/example3" target="_blank"> Our github </a> 
+            </span> 
+            <span>
+                <%= link_to 'About us', about_path %>  
+            </span>
        
-        <!-- Coded by: Pavel Bratanov -->
-      <span> <%= link_to 'Contacts', contact_path %> </span>
-      <span><%= link_to 'Our team', our_team_path %>  </span>       
-       <span><%= link_to 'Rules', rule_path %></span> 
-      
-    </footer>
+            <!-- Coded by: Pavel Bratanov -->
+            <span> 
+                <%= link_to 'Contacts', contact_path %> 
+            </span>
+            <span>
+                <%= link_to 'Our team', our_team_path %>  
+            </span>       
+            <span>
+              <%= link_to 'Rules', rule_path %>  
+            </span>      
+      </footer>
 
     <!-- <footer class="floating" > -->
               
