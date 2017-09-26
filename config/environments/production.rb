@@ -92,10 +92,10 @@ Rails.application.configure do
   # Rails.application.routes.default_url_options[:host] = 'booksget.herokuapp.com'
   config.action_mailer.raise_delivery_errors = true
     
-    config.action_mailer.default_url_options = { :host =>'' } 
-  # config.action_mailer.default_url_options = { :host => 'booksget.herokuapp.com' }  testing by Vladimir
+#    config.action_mailer.default_url_options = { :host =>'' } 
+   config.action_mailer.default_url_options = { :host => 'booksget.herokuapp.com' } # testing by Vladimir
   # config.action_mailer.default_url_options = { :host => 'smtp.gmail.com' }  don't uncomment
-=begin
+
   config.action_mailer.delivery_method = :smtp  
   config.action_mailer.perform_deliveries = true  
   config.action_mailer.raise_delivery_errors = false  
@@ -113,5 +113,5 @@ Rails.application.configure do
         #   user_name: ENV["GMAIL_USERNAME"],
         #   password: ENV["GMAIL_PASSWORD"]
          }
-=end         
+         
 end
