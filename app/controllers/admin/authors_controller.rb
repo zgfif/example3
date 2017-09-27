@@ -16,6 +16,7 @@ class Admin::AuthorsController < Admin::AdminController
 =end
   # GET /authors/new
   def new
+
     @author = Author.new
   end
 
@@ -30,8 +31,9 @@ class Admin::AuthorsController < Admin::AdminController
 
     respond_to do |format|
       if @author.save
-        format.html { redirect_to @author, notice: 'Author was successfully created.' }
+        format.html { render '/admin/books/new/', notice: 'Author was successfully created.' }
         format.json { render :show, status: :created, location: @author }
+
       else
         format.html { render :new }
         format.json { render json: @author.errors, status: :unprocessable_entity }
@@ -64,6 +66,9 @@ class Admin::AuthorsController < Admin::AdminController
   end
 
   private
+    def redirect_to_default
+      redirect_to root_path
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_author
       @author = Author.find(params[:id])
