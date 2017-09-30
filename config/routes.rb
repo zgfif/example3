@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+  
+  resources :feedbacks
   devise_for :users
   get :search, controller: :welcome
   get '/rule' => 'pages#rule'
   get '/our_team' => 'pages#our_team'
   get '/contact' => 'pages#contact'
   get '/about' => 'pages#about'
-
   resources :books, only: [:index,:show]
   # resources :users, only: [:index,:show]
   resources :authors, only: [:index, :show]

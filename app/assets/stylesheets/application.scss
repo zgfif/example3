@@ -72,6 +72,23 @@ body{
 //		height: 100%;
 		 	
 }
+
 .carousel-inner{
 	max-height: 300px;
+}
+
+
+.custom-file-control:lang(en)::before {
+    content: "Browse";
+}
+.custom-file-control:lang(en):empty::after {
+    content: "Choose file...";
+}
+
+
+.custom-file-control:lang(en)::before {
+    content: "Browse";
+}
+.custom-file-control:lang(en):empty::after {
+    content: "Choose file...";
 }

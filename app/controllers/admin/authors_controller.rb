@@ -16,7 +16,6 @@ class Admin::AuthorsController < Admin::AdminController
 =end
   # GET /authors/new
   def new
-
     @author = Author.new
   end
 
@@ -31,7 +30,7 @@ class Admin::AuthorsController < Admin::AdminController
 
     respond_to do |format|
       if @author.save
-        format.html { render '/admin/books/new/', notice: 'Author was successfully created.' }
+        format.html { redirect_to new_admin_book_url, notice: 'Author was successfully created.' }
         format.json { render :show, status: :created, location: @author }
 
       else
@@ -46,6 +45,7 @@ class Admin::AuthorsController < Admin::AdminController
   def update
     respond_to do |format|
       if @author.update(author_params)
+        
         format.html { redirect_to @author, notice: 'Author was successfully updated.' }
         format.json { render :show, status: :ok, location: @author }
       else

@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Booksget</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <%#= javascript_include_tag "application" %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+   
     <!-- <link rel ="stylesheet" href="../../assets/stylesheets/app.css"> -->
     <%= favicon_link_tag 'favicon.ico' %>
+
   </head>
 
   <body>
+
       <div class="content">
             <div>
                   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -128,26 +131,12 @@
             <span>
               <%= link_to 'Rules', rule_path %>  
             </span>      
-        </center>
-          
+        </center>   
       </footer>
+      <%#= stylesheet_link_tag "application" %>
+<%#= javascript_include_tag "application" %>
+   
 
-    <!-- <footer class="floating" > -->
-              
-      <!-- <p>&#9400; 2017 bookboard.od.ua</p>               -->
-       <!-- <button class="btn btn-default btn-lg pull-xs-right">
-                  <a href="#">Back to top</a>
-      </button>
-       -->       
-      <!--  <span><a href="http://github.com/zgfif/example3">Booksget</a> 2017 </span> 
-      <span><%= link_to 'About us', about_path %>  </span>
-       -->  <!-- Coded by: Pavel Bratanov -->
-      <!-- <span> <%= link_to 'Contacts', contact_path %> </span>
-      <span><%= link_to 'Our team', our_team_path %>  </span>       
-       <span><%= link_to 'Rules', rule_path %></span> 
-       -->  
-     
-    <!-- </footer> -->
     
   </body>
 </html>
