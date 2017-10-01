@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
 
 <h1>Books</h1>
 <% if user_signed_in?&&current_user.admin? %>
@@ -30,7 +30,9 @@
       <tr>
         <td><%= book.title %></td>
         <td><%= book.language %></td>
-        <td><%= book.description %></td>
+        <td><%=h truncate(book.description, :length => 80) %>
+          <%#= book.description %> 
+          </td>
         <% if user_signed_in?&&current_user.admin? %>
         <td>
             <%= book.user.name.nil? && book.user.surname.nil? ? book.user.email : book.user.name+" "+book.user.surname %>
