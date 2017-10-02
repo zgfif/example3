@@ -65,13 +65,13 @@
     <% @locations.each do |location| %>
         <% if location.id==1 and location.picture? %>
           <div class="carousel-item active">
-                <%= link_to (image_tag location.picture.url(:large), alt: location.name, class: "d-block w-100"), location_path(location)  if location.picture? %>
+                <%= link_to (image_tag location.picture.url, alt: location.name, class: "d-block w-100"), location_path(location)  if location.picture? %>
                 <!-- <img class="d-block w-100" src="..." alt="First slide"> -->
           </div>
         <% else if location.picture? %>
                 <div class="carousel-item">
                     <!-- <img class="d-block w-100" src="..." alt="Third slide"> -->
-                    <%= link_to (image_tag location.picture.url(:large), alt: location.name, class: "d-block w-100"), location_path(location)  if location.picture? %>
+                    <%= link_to (image_tag location.picture.url, alt: location.name, class: "d-block w-100"), location_path(location)  if location.picture? %>
                 </div>
                 <% else %>
                   <% next %>
