@@ -10,7 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+// require jquery
 // require bootstrap-filestyle
 //= require rails-ujs
 //= require bootstrap-filestyle
@@ -18,7 +18,7 @@
 //= require_tree .
 //= require bootstrap-sprockets
 //= require popper
-//= require jquery.turbolinks
+// require jquery.turbolinks
 //= require turbolinks
 
 $(window).scroll(function() {

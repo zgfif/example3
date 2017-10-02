@@ -7,7 +7,13 @@
  * Version 1.3.0
  * Licensed under the MIT license.
  */
-(function($) {
+
+
+
+
+
+document.addEventListener("turbolinks:load", function() {
+  (function($) {
 	"use strict";
 
     var nextId = 0;
@@ -344,3 +350,5 @@
 		});
 	});
 })(window.jQuery);
+
+})

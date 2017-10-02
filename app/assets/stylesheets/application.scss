@@ -84,7 +84,9 @@ body{
 .custom-file-control:lang(en):empty::after {
     content: "Choose file...";
 }
-
+.line_select{
+	line-height: 2;
+}
 
 .custom-file-control:lang(en)::before {
     content: "Browse";

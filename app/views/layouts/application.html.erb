@@ -4,11 +4,11 @@
     <title>Booksget</title>
     <%= csrf_meta_tags %>
     <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-        <%#= javascript_include_tag "application" %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
    
-    <!-- <link rel ="stylesheet" href="../../assets/stylesheets/app.css"> -->
+    
     <%= favicon_link_tag 'favicon.ico' %>
 
   </head>
@@ -72,12 +72,8 @@
                                      
                               <% end %>    
                           </ul>
-                        </div>
-                                  
-                                        
-                     
-                        <!-- <%= link_to 'Add book', new_admin_book_path, class: 'btn btn-outline-primary pull-xs-right' %> -->
-                         
+                        </div>                      
+                                              
                   </nav> 
                   <div class="container search_margin_top">
                     <%= form_with url: search_path, local: true, method: :get do |form| %>
@@ -88,15 +84,7 @@
                   </div>
              
             </div>
-            <!--       
-                  <% unless current_page?(root_path) %>
-                      <div>
-                          <%= link_to 'Home', root_path %>
-                          <%= link_to 'Back', :back %>
-                      </div>
-                  <% end %> 
-                      
-             -->     
+                 
             
                   <p class="notice ">
                       <%= notice %> 
@@ -132,11 +120,6 @@
               <%= link_to 'Rules', rule_path %>  
             </span>      
         </center>   
-      </footer>
-      <%#= stylesheet_link_tag "application" %>
-<%#= javascript_include_tag "application" %>
-   
-
-    
+      </footer>    
   </body>
 </html>

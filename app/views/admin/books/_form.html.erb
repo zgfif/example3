@@ -18,19 +18,12 @@
   </div>
   <div class="form-group add_file_style">
     <%#= form.label :image %>
-     <%= form.file_field :image, id: :book_image %> 
+     <%#= form.file_field :image, id: :book_image %> 
   </div>
 
   <div class="form-group">
-    
-   <!--  <script type="text/javascript" src="../../../assets/javascripts/bootstrap-filestyle.min.js">
-      $(":file").filestyle();
-    </script> -->
-	  <!-- <label class="custom-file"> -->
-	  	<!-- <input type="file" id="file2" class="custom-file-input"> -->
-<!-- 	  	<%= form.file_field :image, id: :book_image, class: "filestyle", 'data-buttonBefore': "true", 'data-btnClass':"btn-primary", 'data-text':"Add image",'data-placeholder': "No file" %>
- -->	  	<!-- <span class="custom-file-control filestyle"></span> -->
-	  <!-- </label>  	 -->
+   <%= form.file_field :image, id: :book_image, 'data-placeholder':"No file",'data-buttonBefore':"true",'data-text':"Add image",'data-btnClass':"btn-primary", class: "filestyle" %>  
+   <!-- <input type="file" class="filestyle" data-btnClass="btn-primary"> -->
   </div>
   
   
@@ -42,7 +35,7 @@
 
   <div class="form-group">
     <%= form.label :language %>
-    <%= form.select(:language, [['русский'], ['английский']],{}, {:class => 'form-control'})%>   
+    <%= form.select(:language, [['русский'], ['английский']],{}, {:class => 'form-control line_select'})%>   
   </div>
 
   <div class="form-group">

@@ -31,7 +31,7 @@ end
 	json.users do
 		json.array!(@users) do |user|
 			json.name user.email
-			json.url user_path(user)
+			json.url admin_user_path(user)
 		end
 	end
 
