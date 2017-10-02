@@ -9,7 +9,11 @@
  */
 
 
-(function($) {
+
+
+
+document.addEventListener("turbolinks:load", function() {
+  (function($) {
 	"use strict";
 
     var nextId = 0;
@@ -347,9 +351,4 @@
 	});
 })(window.jQuery);
 
-
-document.addEventListener("turbolinks:load", function() {
-  
-
 })
-
