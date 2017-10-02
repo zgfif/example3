@@ -113,5 +113,6 @@ Rails.application.configure do
         #   user_name: ENV["GMAIL_USERNAME"],
         #   password: ENV["GMAIL_PASSWORD"]
          }
-  config.serve_static_assets = true       
+  config.serve_static_assets = true
+  config.assets.compile = true       
 end
