@@ -10,16 +10,18 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-// require jquery
-// require bootstrap-filestyle
+//= require jquery
 //= require rails-ujs
-//= require bootstrap-filestyle
-//= require jquery.easy-autocomplete
-//= require_tree .
-//= require bootstrap-sprockets
 //= require popper
 // require jquery.turbolinks
+//= require jquery.easy-autocomplete
+//= require bootstrap-filestyle
+//= require bootstrap-sprockets
 //= require turbolinks
+//= require_tree .
+
+
+
 
 $(window).scroll(function() {
       if ($(".navbar").offset().top > 50) {
