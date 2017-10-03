@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :feedbacks
+   
   devise_for :users
   get :search, controller: :welcome
   get '/rule' => 'pages#rule'
@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/about' => 'pages#about'
   resources :books, only: [:index,:show]
   # resources :users, only: [:index,:show]
+  resources :feedbacks, only: [:new,:create]
   resources :authors, only: [:index, :show]
   resources :genres, only: [:index, :show]
   resources :locations, only:[:index, :show]
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :admin do
+    resources :feedbacks, except: [:new,  :create]
   	resources :books, except: [:index,:show]
     resources :authors, except: [:index, :show]
     resources :genres, except: [:index,:show]

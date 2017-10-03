@@ -1,9 +1,9 @@
-class FeedbacksController < ApplicationController
-  # before_action :set_feedback, only: [:show, :edit, :update, :destroy]
+class Admin::FeedbacksController < Admin::AdminController
+  before_action :set_feedback, only: [:show, :edit, :update, :destroy]
 
   # GET /feedbacks
   # GET /feedbacks.json
-=begin  
+
   def index
     @feedbacks = Feedback.all
   end
@@ -12,17 +12,16 @@ class FeedbacksController < ApplicationController
   # GET /feedbacks/1.json
   def show
   end
-=end
+=begin
   # GET /feedbacks/new
   def new
     @feedback = Feedback.new
   end
-
+=end
   # GET /feedbacks/1/edit
-=begin 
   def edit
   end
-=end
+=begin
   # POST /feedbacks
   # POST /feedbacks.json
   def create
@@ -30,7 +29,7 @@ class FeedbacksController < ApplicationController
 
     respond_to do |format|
       if @feedback.save
-        format.html { redirect_to contact_path, notice: 'Feedback was successfully created.' }
+        format.html { redirect_to @feedback, notice: 'Feedback was successfully created.' }
         format.json { render :show, status: :created, location: @feedback }
       else
         format.html { render :new }
@@ -38,7 +37,7 @@ class FeedbacksController < ApplicationController
       end
     end
   end
-=begin
+=end
   # PATCH/PUT /feedbacks/1
   # PATCH/PUT /feedbacks/1.json
   def update
@@ -58,11 +57,11 @@ class FeedbacksController < ApplicationController
   def destroy
     @feedback.destroy
     respond_to do |format|
-      format.html { redirect_to feedbacks_url, notice: 'Feedback was successfully destroyed.' }
+      format.html { redirect_to admin_feedbacks_url, notice: 'Feedback was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
-=end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_feedback

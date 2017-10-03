@@ -1,6 +1,6 @@
 <h1>Editing Book</h1>
 
 <%= render 'form', book: @book %>
-<%= link_to 'Destroy', admin_book_path(@book), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+<%= link_to 'Destroy book', admin_book_path(@book), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 <%#= link_to 'Delete', @book %> 
 <%#= link_to 'Back', :back %>
