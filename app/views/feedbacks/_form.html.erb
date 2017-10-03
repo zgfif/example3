@@ -20,9 +20,9 @@
     <%= form.label :text %>
     <%= form.text_area :text, id: :feedback_text, class: "form-control" %>
   </div>
-  <div class="form-group">
-    <%= recaptcha_tags %>  
+  
+  
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary" %>
   </div>
-  
-  
 <% end %>
