@@ -1,9 +1,11 @@
 <!-- <p id="notice"><%= notice %></p> -->
 
 <h1>Books</h1>
+<br>
 <% if user_signed_in?&&current_user.admin? %>
 <%= link_to 'Add book', new_admin_book_path, class: "btn btn-outline-primary" %>
 <% end %>
+
 <div class="container">
       <table class="table">
   <thead>

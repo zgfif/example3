@@ -1,33 +1,37 @@
 <!-- <p id="notice"><%= notice %></p> -->
 
 <h1>Authors</h1>
+<br>
   <% if user_signed_in?&&current_user.admin? %>
         <%= link_to 'Add new author', new_admin_author_path, class: "btn btn-outline-primary" %>
-  <% end %>      
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Surname</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <% end %>
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-  <tbody>
-    <% @authors.each do |author| %>
-      <tr>
-        <td><%= author.name %></td>
-        <td><%= author.surname %></td>
-        <td><%= link_to 'Show', author %></td>
-        <% if user_signed_in?&&current_user.admin? %>
-              <td><%= link_to 'Edit', edit_admin_author_path(author) %></td>
-              <td><%= link_to 'Destroy', admin_author_path(author), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>      
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <tbody>
+          <% @authors.each do |author| %>
+            <tr>
+              <td><%= author.name %></td>
+              <td><%= author.surname %></td>
+              <td><%= link_to 'Show', author %></td>
+              <% if user_signed_in?&&current_user.admin? %>
+                    <td><%= link_to 'Edit', edit_admin_author_path(author) %></td>
+                    <td><%= link_to 'Destroy', admin_author_path(author), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <% end %>      
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
 
+</div>        
+      
 <br>
 <%= link_to 'Back', root_path, class: "btn btn-secondary" %>
 
