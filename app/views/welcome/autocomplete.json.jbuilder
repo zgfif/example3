@@ -28,11 +28,11 @@ end
 
  # unless @users.nil?
 
-json.users do
-	json.array!(@users) do |user|
-		json.name user.email
-		json.url admin_user_path(user)
+	json.users do
+		json.array!(@users) do |user|
+			json.name user.email
+			json.url admin_user_path(user)
+		end
 	end
-end
 
 # end

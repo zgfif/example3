@@ -1,19 +1,50 @@
 <% if params[:q].present? %>
-<h1>Search Results for "<%= params[:q] %>" </h1> 
+	<h1>Search Results for "<%= params[:q] %>" </h1> 
 <% else %>
- <h1><%= "Please, type anything" %> </h1>
+ 	<h1><%= "Please, type anything" %> </h1>
 <% end %>
-<div>
-		<h2>Books</h2>	
 
-</div>
-<div>
-	<h2>Authors</h2>
-</div>
-<div>
-	<h2>Categories</h2>
-</div>
 
 <div>
-	<h2>Locations</h2>
+	<% if @books.present? %> 
+	 	<h2>Books:</h2>
+	<% end %>
+	<% @books.each do |book| %>
+		<%= link_to book.title, book_path(book) %>
+	<% end %>	
+
 </div>
+<div><% if @authors.present? %>
+		<h2>Authors:</h2>
+	<% end %>
+	<% @authors.each do |author| %>
+		<%= link_to	author.name+" "+author.surname, author_path(author) %>
+	<% end %>
+</div>
+<div>
+	<% if @genres.present? %>
+	<h2>Genres:</h2>
+	<% end %>
+	<% @genres.each do |genre| %>
+		<%=	link_to genre.genre_name, genre_path(genre) %>
+	<% end %>
+</div>
+
+<div>
+	<% if @locations.present? %>
+	<h2>Locations:</h2>
+	<% end %>
+	<% @locations.each do |location| %>
+		<%= link_to	location.name, location_path(location) %>
+	<% end %>
+</div>
+<% if user_signed_in?&&current_user.admin? %>
+	<div>
+		<% if @users.present? %>
+			<h2>Users:</h2>
+		<% end %>
+		<% @users.each do |user| %>
+			<%= link_to	user.email, admin_user_path(user) %>
+		<% end %>
+	</div>
+<% end %>

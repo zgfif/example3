@@ -1,6 +1,7 @@
 class Admin::BooksController < Admin::AdminController
   # before_action :authenticate_user!, except: [:index,:show]
   before_action :set_book, only: [:edit, :update, :destroy]
+
   # before_action :check_admin 
 =begin 
   # GET /books
@@ -17,6 +18,7 @@ class Admin::BooksController < Admin::AdminController
   # GET /books/new
   def new
     @book = Book.new
+#    @author = Author.new
   end
 
   # GET /books/1/edit
@@ -25,8 +27,11 @@ class Admin::BooksController < Admin::AdminController
 
   # POST /books
   # POST /books.json
+
+  
   def create
     @book = Book.new(book_params)
+
 
     respond_to do |format|
       if @book.save

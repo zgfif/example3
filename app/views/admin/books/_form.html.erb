@@ -67,6 +67,41 @@
     <%= form.select(:author_id, Author.all.collect {|p| [ p.name+" "+p.surname, p.id ] } + [ ['add new author', 'new']],{},{:onchange => "newAuthor();", class: "form-control line_select"}) %>    
   </div>
 
+
+
+
+<!-- 
+
+  <div class="form-group">
+    <%= form.label :author_id %>
+         <script>
+            $('select').change(function () 
+            {
+
+              if ($(this).val() === 'new') 
+                {
+                     
+                  // Handle new option
+                  //alert("Hello! I am an alert box!!");
+                }
+            }
+            );
+
+        </script>
+
+    <%= form.select(:author_id, Author.all.collect {|p| [ p.name+" "+p.surname, p.id ] } + [ ['add new author', 'new']],{}, class: "form-control line_select") %> 
+    <%#= render "admin/authors/form" %>
+    
+  </div>
+ -->
+
+
+
+
+
+
+
+
   <div class="form-group">
     <%= form.label :genre_id %>
     <script>
@@ -116,3 +151,4 @@
   </div>
 <% end %>
 
+ 
