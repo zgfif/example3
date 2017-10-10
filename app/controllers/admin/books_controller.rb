@@ -18,11 +18,13 @@ class Admin::BooksController < Admin::AdminController
   # GET /books/new
   def new
     @book = Book.new
-#    @author = Author.new
+   @author = Author.new
   end
 
   # GET /books/1/edit
   def edit
+    @author = Author.new
+  
   end
 
   # POST /books
