@@ -23,8 +23,8 @@
   <strong>Language:</strong>
   <%= @book.language %>
 </p>
-<div>
-  <%= image_tag @book.image.url(:large) if @book.image? %>
+<div class="books_size">
+  <%= image_tag @book.image if @book.image? %>
 </div>
 <p>
   <strong>Description:</strong>

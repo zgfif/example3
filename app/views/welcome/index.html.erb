@@ -19,7 +19,7 @@
 <div class="card-deck d-flex flex-nowrap">
 	   <% @books.each do |book| %>
       	<div class= "card parrent_bottom">
-      		  <%= link_to (image_tag book.image.url(:large) , class: "card-img-top"), book_path(book) if book.image? %><br>
+      		  <%= link_to (image_tag book.image, class: "card-img-top"), book_path(book) if book.image? %><br>
             <div class="align_bottom">
                 <div class="card-body text-center">
                     <h5 class="card-title">
