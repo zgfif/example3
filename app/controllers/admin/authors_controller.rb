@@ -31,9 +31,9 @@ class Admin::AuthorsController < Admin::AdminController
     respond_to do |format|
       if @author.save
 
-        format.html {flash[:notice] = "Author successfully added"}
+       
         # format.html #{redirect_to current_page, notice: 'Author was successfully created.' }
-        # format.html { redirect_to new_admin_book_url, notice: 'Author was successfully created.' }
+        format.html { redirect_to new_admin_book_url, notice: 'Author was successfully created.' }
         format.json { render :show, status: :created, location: @author }
 
       else
@@ -82,3 +82,4 @@ class Admin::AuthorsController < Admin::AdminController
       params.require(:author).permit(:name, :surname)
     end
 end
+

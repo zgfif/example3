@@ -9,9 +9,9 @@
   <strong>Address:</strong>
   <%= @location.address %>
 </p>
-<div>
+<div id="locations_size">
   
-  <%= image_tag @location.picture.url(:large) if @location.picture? %>
+  <%= image_tag @location.picture  if @location.picture? %>
 </div>
 <p>
   <strong>Description:</strong>

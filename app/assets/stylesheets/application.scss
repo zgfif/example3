@@ -95,3 +95,7 @@ body{
 .custom-file-control:lang(en):empty::after {
     content: "Choose file...";
 }
+#locations_size img{
+	width: 60%;
+	height: auto;
+}
