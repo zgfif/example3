@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
    
   devise_for :users
+  
   get :search, controller: :welcome
   get :autocomplete, controller: :welcome
   get '/rule' => 'pages#rule'
@@ -19,7 +20,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :admin do
-    
+    get :new_author_at_book, controller: :authors  
     resources :feedbacks, except: [:new,  :create]
   	resources :books, except: [:index,:show]
     resources :authors, except: [:index, :show]

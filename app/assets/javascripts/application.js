@@ -38,3 +38,4 @@ $(window).scroll(function() {
         return $(".logo_dark").hide();
       }
     });
+

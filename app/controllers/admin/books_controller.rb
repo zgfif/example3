@@ -18,12 +18,12 @@ class Admin::BooksController < Admin::AdminController
   # GET /books/new
   def new
     @book = Book.new
-   @author = Author.new
+  # @author = Author.new
   end
 
   # GET /books/1/edit
   def edit
-    @author = Author.new
+    #@author = Author.new
   
   end
 
@@ -32,19 +32,13 @@ class Admin::BooksController < Admin::AdminController
 
   
   def create
+    # render plain: params[:book].inspect
     @book = Book.new(book_params)
-
 
     respond_to do |format|
       if @book.save
         format.html { redirect_to @book, notice: 'Book was successfully created.' }
         format.json { render :show, status: :created, location: @book }
- #       increase_added(@book)
-=begin
-user = User.find_by(id: @book.user_id)
-user.added = user.added.to_i + 1
-user.save
-=end
       else
         format.html { render :new }
         format.json { render json: @book.errors, status: :unprocessable_entity }

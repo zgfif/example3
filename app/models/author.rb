@@ -1,4 +1,5 @@
 class Author < ApplicationRecord
+	validates :name, :surname, presence: true                    
 	has_many :books
 	has_many :locations, :through => :books
 	has_many :genres, :through => :books

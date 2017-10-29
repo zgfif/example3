@@ -27,14 +27,14 @@
 
                           <ul class="navbar-nav mr-auto">
                           <% unless current_page?(root_path) %>
-                              <li class="nav-item active">
+                              <!-- <li class="nav-item active">
 
                                   <a class="nav-link" href= <%= root_path %>   > Home
                                         <span class="sr-only">
                                                 (current)
                                         </span>
                                   </a>
-                              </li>
+                              </li> -->
                               <li class="nav-item active">
                                   <%= link_to 'Back', :back, class: "nav-link" %>
                               </li>  
@@ -60,7 +60,7 @@
                                 <li class="nav-item">
                                   <%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } , class: "nav-link disabled" %>
                                 </li>
-                                      <%= link_to 'Add book', new_admin_book_path, class: 'btn btn-outline-primary pull-xs-right' %>
+                                      <%= link_to 'Add book', new_admin_book_path, class: 'btn btn-outline-primary pull-xs-right ' ,id: 'style_of_add_book' %>
 
                               <% else %>
                                   <li class="nav-item">
@@ -77,7 +77,7 @@
                   </nav> 
                   <div class="container search_margin_top">
                     <%= form_with url: search_path, local: true, method: :get do |form| %>
-                      <%= form.text_field :q, :size =>"50", placeholder: "Type book,author or location", data:{behavior: "autocomplete"}, class: "form-control" %>
+                      <%= form.text_field :q, :size =>"50", placeholder: "Type book,author or location", data:{behavior: "autocomplete"}, class: "form-control width_of_search" %>
                       <%#= form.button "Search" %>
                     <% end %>
                   </div>

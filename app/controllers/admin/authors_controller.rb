@@ -15,6 +15,13 @@ class Admin::AuthorsController < Admin::AdminController
   end
 =end
   # GET /authors/new
+  def new_author_at_book
+      @author = Author.new
+      respond_to do |format|
+          format.js #{render layout: false} # Add this line to you respond_to block
+      end
+  end
+
   def new
     @author = Author.new
   end
@@ -29,13 +36,12 @@ class Admin::AuthorsController < Admin::AdminController
     @author = Author.new(author_params)
 
     respond_to do |format|
-      if @author.save
-
-       
+      if @author.save 
         # format.html #{redirect_to current_page, notice: 'Author was successfully created.' }
-        format.html { redirect_to new_admin_book_url, notice: 'Author was successfully created.' }
+        #format.html #{ redirect_to new_admin_book_url, notice: 'Author was successfully created.' }
+        format.html
         format.json { render :show, status: :created, location: @author }
-
+        format.js # Add this line to you respond_to block
       else
         format.html { render :new }
         format.json { render json: @author.errors, status: :unprocessable_entity }

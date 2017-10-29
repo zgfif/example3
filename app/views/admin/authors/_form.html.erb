@@ -1,4 +1,4 @@
-<%= form_with(model: [:admin, @author], local: true) do |form| %>
+<%= form_with(model: [:admin, @author], remote: true, id: 'specific') do |form| %>
   <% if @author.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(author.errors.count, "error") %> prohibited this author from being saved:</h2>
@@ -13,7 +13,7 @@
 
   <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :author_name, placeholder: "Author's name", class: "form-control" %>
+    <%= form.text_field :name, id: :author_name, placeholder: "Author's name", class: "form-control", id: "name_authors" %>
   </div>
 
   <div class="form-group">
@@ -22,19 +22,28 @@
   </div>
 
   <div class="actions">
-    <script type="text/javascript">
-        function success_add(t)
-{
-    if($(t).prev().val())
-    {
-        alert('Adding Succesful!')
-        return true;
-    }else{
-        return false;
-    }
-}
-
-    </script>
-    <%= form.submit onclick: "success_add()", class:'btn btn-primary' %>
+    <script type="text/javascript" >
+    (function() {
+                    document.getElementById("submit_author").onclick = function() { 
+                    $('#exampleModal').modal('hide'); 
+                  };
+                })();
+</script>
+    <!-- <script type="text/javascript">
+                  function success_add(t)
+        {
+            if($(t).prev().val())
+            {
+                alert('Adding Succesful!')
+                return true;
+            }else{
+                return false;
+            }
+        }
+        
+        
+    </script> -->
+    <%= form.submit  class:'btn btn-primary', id: 'submit_author' %>
   </div>
 <% end %>
+<!-- onclick: "success_add()", -->

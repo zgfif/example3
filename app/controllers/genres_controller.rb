@@ -1,7 +1,7 @@
 class GenresController < ApplicationController
   #before_action :authenticate_user!, except: [:index,:show]
   before_action :set_genre, only: :show#, :edit, :update, :destroy]
-
+                      
   # GET /genres
   # GET /genres.json
   def index
