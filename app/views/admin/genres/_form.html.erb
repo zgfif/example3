@@ -1,10 +1,10 @@
-<%= form_with(model:[:admin, @genre] , local: true) do |form| %>
-  <% if genre.errors.any? %>
+<%= form_with(model:[:admin, @genre] , remote: true, id: 'specific2') do |form| %>
+  <% if @genre.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(genre.errors.count, "error") %> prohibited this genre from being saved:</h2>
 
       <ul>
-      <% genre.errors.full_messages.each do |message| %>
+      <% @genre.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -17,6 +17,13 @@
   </div>
 
   <div class="actions">
-    <%= form.submit class: "btn btn-primary" %>
+    <script type="text/javascript" >
+    (function() {
+                    document.getElementById("submit_genre").onclick = function() { 
+                    $('#exampleModal').modal('hide'); 
+                  };
+                })();
+</script>
+    <%= form.submit class: "btn btn-primary", id: 'submit_genre' %>
   </div>
 <% end %>

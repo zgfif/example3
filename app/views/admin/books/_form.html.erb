@@ -65,15 +65,18 @@
 
   <div class="form-group">
     <%= form.label :genre_id %>
-    <%= form.select(:genre_id, Genre.all.collect {|p| [ p.genre_name, p.id ] } + [ ['add new genre', 'new']],{},{:onchange => "newGenre();", id: 'genre_select', class: 'form-control line_select'}) %>
+    <div id="genre_area">
+        <%= form.select(:genre_id, Genre.all.collect {|p| [ p.genre_name, p.id ] } + [ ['add new genre', 'new']],{:selected =>Genre.last.id.to_i},{:onchange => "newGenre();", id: 'genre_select', id: 'genre_select', class: 'form-control line_select', data: {remote: true, url: url_for( action: 'new_genre_at_book', controller: '/admin/genres')}}) %>  
+    </div>
+    
     <%#= form.collection_select(:genre_id, Genre.all, :id, :genre_name) %>
   </div>
+
+
+
   <div class="form-group">
     <%= form.label :location_id %>
     <%#= form.collection_select(:location_id, Location.all, :id, :name) %>
-    <script>
-        
-    </script>
     <%= form.select(:location_id, Location.all.collect {|p| [ p.name, p.id ] } + [ ['add new location', 'new']],{},{:onchange => "newLocation();",class:'form-control line_select'}) %>
   </div>
   <!-- <div class="field"> -->
@@ -100,13 +103,12 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add new author</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Add new </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body" id="rendering_of_form_author">      
-          <%#= render "admin/authors/form" %>	
+      <div class="modal-body" id="rendering_of_form_author">      	
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
       <div class="modal-footer">

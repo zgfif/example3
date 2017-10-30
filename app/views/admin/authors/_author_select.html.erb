@@ -1,2 +1,2 @@
- <%= select("","book[author_id]", Author.all.collect {|p| [ p.name+" "+p.surname, p.id ] } + [ ['add new author', 'new']],{:selected =>Author.last.id.to_i}, id: 'author_select', class: "form-control line_select") %> 
  
+ <%= select("","book[author_id]", Author.all.collect {|p| [ p.name+" "+p.surname, p.id]} + [ ['add new author', 'new']],{:selected =>Author.last.id.to_i}, {:onchange => "newAuthor();", id: 'author_select', class: "form-control line_select", data: {remote: true, url: url_for( action: 'new_author_at_book', controller: '/admin/authors')}}) %>

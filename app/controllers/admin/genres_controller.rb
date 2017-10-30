@@ -15,6 +15,13 @@ class Admin::GenresController < Admin::AdminController
   end
 =end
   # GET /genres/new
+  def new_genre_at_book
+      @genre = Genre.new
+      respond_to do |format|
+          format.js #{render layout: false} # Add this line to you respond_to block
+      end
+  end
+
   def new
     @genre = Genre.new
   end
@@ -32,6 +39,7 @@ class Admin::GenresController < Admin::AdminController
       if @genre.save
         format.html { redirect_to new_admin_book_url, notice: 'Genre was successfully created.' }
         format.json { render :show, status: :created, location: @genre }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @genre.errors, status: :unprocessable_entity }

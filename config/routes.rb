@@ -20,7 +20,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :admin do
-    get :new_author_at_book, controller: :authors  
+    get :new_author_at_book, controller: :authors
+    get :new_genre_at_book, controller: :genres  
     resources :feedbacks, except: [:new,  :create]
   	resources :books, except: [:index,:show]
     resources :authors, except: [:index, :show]

@@ -1,0 +1,1 @@
+<%= select("","book[genre_id]", Genre.all.collect {|p| [ p.genre_name, p.id ] } + [ ['add new genre', 'new']],{:selected =>Genre.last.id.to_i},{:onchange => "newGenre();", id: 'genre_select', id: 'genre_select', class: 'form-control line_select', data: {remote: true, url: url_for( action: 'new_genre_at_book', controller: '/admin/genres')}}) %>
