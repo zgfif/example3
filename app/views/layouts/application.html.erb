@@ -18,9 +18,9 @@
       <div class="content">
             <div>
                   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-                        <%= image_tag("book-icon-120-191918.png", size: "45x40",:alt => "rss feed", id:'booksget_logo') %>
+                        <%= image_tag("book-icon-120-191918.png", size: "50x40",:alt => "rss feed", id:'booksget_logo') %>
                         <!-- <img src="book-icon-120-191918.png" alt="rss feed" /> -->
-                        <a class="navbar-brand" href= <%= root_path %> >Booksget</a>
+                        <a class="navbar-brand padding_header" href= <%= root_path %> >Booksget</a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                   <span class="navbar-toggler-icon"></span>
                         </button>
@@ -38,35 +38,35 @@
                                   </a>
                               </li> -->
                               <li class="nav-item active">
-                                  <%= link_to 'Back', :back, class: "nav-link" %>
+                                  <%= link_to 'Back', :back, class: "nav-link padding_header" %>
                               </li>  
                               <% end %>
                           </ul>
 
                           <ul class="navbar-nav">
                             <% if user_signed_in? %>
-                                <li class="nav-item nav-link active">
+                                <li class="nav-item nav-link active padding_header">
                                     <%= current_user.name.present? ? "Hello, "+current_user.name : "Hello, "+current_user.email+"  "  %>
                                 </li>
-                                <li class="nav-item nav-link active">
+                                <li class="nav-item nav-link active padding_header">
                                   <%= current_user.admin? ? "You're admin" : "" %>
                                 </li>                                               
                                 <% if current_user.admin? %> 
                                 
-                                      <%= link_to 'Statistics ', admin_statistic_index_path, class: "nav-link active" %>
+                                      <%= link_to 'Statistics ', admin_statistic_index_path, class: "nav-link active padding_header" %>
                                                                     
                                 <% end %>
                                 <li class="nav-item" >
-                                     <%= link_to ' Profile', admin_user_path(current_user) , class: "nav-link active" %> 
+                                     <%= link_to ' Profile', admin_user_path(current_user) , class: "nav-link active padding_header" %> 
                                 </li>  
                                 <li class="nav-item">
-                                  <%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } , class: "nav-link disabled" %>
+                                  <%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } , class: "nav-link disabled padding_header" %>
                                 </li>
-                                      <%= link_to 'Add book', new_admin_book_path, class: 'btn btn-outline-primary pull-xs-right ' ,id: 'style_of_add_book' %>
+                                      <%= link_to 'Add book', new_admin_book_path, class: 'btn btn-outline-primary pull-xs-right' ,id: 'style_of_add_book' %>
 
                               <% else %>
                                   <li class="nav-item">
-                                        <%= link_to 'Sign in', new_user_session_path, class: "nav-link active" %>
+                                        <%= link_to 'Sign in', new_user_session_path, class: "nav-link active padding_header" %>
                                   </li>
                                   <li>
                                          <%= link_to 'Register', new_user_registration_path, class: "nav-link active" %>
@@ -87,10 +87,10 @@
             </div>
                  
             
-                  <p class="notice ">
+                  <p class="notice container floating">
                       <%= notice %> 
                   </p>
-                  <p class="alert" >
+                  <p class="alert container" >
                       <%= alert %>
                   </p>
             

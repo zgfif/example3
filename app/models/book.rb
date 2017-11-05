@@ -12,6 +12,7 @@ class Book < ApplicationRecord
 
   
   after_save :count_of_held_books2#, :is_available
+  before_save :is_available
   before_update :is_available
 
   
