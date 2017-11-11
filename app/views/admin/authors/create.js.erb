@@ -1,3 +1,8 @@
- $('#rendering_of_form_author').empty();
+<% if @author.errors.any? %>
+    alert('you have errors. Please enter data to fields');
+    <% else %>
+    alert('Successfully added author');
+  <% end %>
+// $('#rendering_of_form_author').empty();
 $("#author_area").empty();
 $('#author_area').html("<%= escape_javascript(render('author_select')) %>");

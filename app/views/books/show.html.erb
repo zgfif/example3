@@ -4,8 +4,9 @@
 <%#= "bla bla" %>
 
   <!-- <strong>Title:</strong> -->
- <h2><%= @book.title %></h2> 
-<!-- </p> -->
+<div class="container">
+    <h2><%= @book.title %></h2> 
+
 <p>
   <strong>id:</strong>
   <%= @book.id %>
@@ -56,16 +57,20 @@
 <p>
   <strong>Holder:</strong>
   <% if @book.holder.present? %>
-  		<% if @book.holder.name.present? && @book.holder.surname.present? %>
-   				<%= @book.holder.name + " " + @book.holder.surname  %> 
-   			<% else %>
-   				<%= @book.holder.email %>
-   				
-   		<% end %>
-   	<%else %> 
-   			<%='no holder'%>
+      <% if @book.holder.name.present? && @book.holder.surname.present? %>
+          <%= @book.holder.name + " " + @book.holder.surname  %> 
+        <% else %>
+          <%= @book.holder.email %>
+          
+      <% end %>
+    <%else %> 
+        <%='no holder'%>
   <% end %>
-</p>
+</p> 
+
+
+</div>  
+ 
 <% if user_signed_in?&&current_user.admin? %>
 <%= link_to 'Edit', edit_admin_book_path(@book), class: "btn btn-warning" %> 
 

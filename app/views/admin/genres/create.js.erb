@@ -1,3 +1,12 @@
-$('#rendering_of_form_author').empty();
+<% if @genre.errors.any? %>
+    alert('you have errors. Please enter data to field');
+    <% else %>
+    alert('Successfully added genre');
+  <% end %>
+
+
+
+
+//$('#rendering_of_form_author').empty();
 $("#genre_area").empty();
 $('#genre_area').html("<%= escape_javascript(render('genre_select')) %>");

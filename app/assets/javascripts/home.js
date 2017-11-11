@@ -28,4 +28,9 @@ function newLocation()
                 window.location.replace(url);
               }                
           };          
+ $('#specific2').each(function() {
+   $(this).on('ajax:error', function(event, xhr, data, status) {
+        alert("Please find out error duplicate values!");
 
+    });
+  });

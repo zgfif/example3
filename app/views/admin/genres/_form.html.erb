@@ -1,4 +1,5 @@
 <%= form_with(model:[:admin, @genre] , remote: true, id: 'specific2') do |form| %>
+  
   <% if @genre.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(genre.errors.count, "error") %> prohibited this genre from being saved:</h2>
@@ -11,6 +12,8 @@
     </div>
   <% end %>
 
+   
+    
   <div class="form-group">
     <%= form.label :genre_name %>
     <%= form.text_field :genre_name, id: :genre_genre_name, placeholder: "genre of book", class: "form-control" %>

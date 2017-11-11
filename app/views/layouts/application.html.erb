@@ -79,7 +79,7 @@
                   </nav> 
                   <div class="container search_margin_top">
                     <%= form_with url: search_path, local: true, method: :get do |form| %>
-                      <%= form.text_field :q, :size =>"50", placeholder: "Type book,author or location", data:{behavior: "autocomplete"}, class: "form-control width_of_search" %>
+                      <%= form.text_field :q, :size =>"50", placeholder: "Enter book, author or location", data:{behavior: "autocomplete"}, class: "form-control width_of_search" %>
                       <%#= form.button "Search" %>
                     <% end %>
                   </div>

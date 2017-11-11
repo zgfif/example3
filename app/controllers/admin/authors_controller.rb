@@ -39,12 +39,14 @@ class Admin::AuthorsController < Admin::AdminController
       if @author.save 
         # format.html #{redirect_to current_page, notice: 'Author was successfully created.' }
         #format.html #{ redirect_to new_admin_book_url, notice: 'Author was successfully created.' }
-        format.html
+        format.html# {redirect_to @author, notice: 'Author was successfully created.' }
         format.json { render :show, status: :created, location: @author }
         format.js # Add this line to you respond_to block
       else
-        format.html { render :new }
+        # format.html { render :new }
+        format.html { render "admin/edit" }
         format.json { render json: @author.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -58,7 +60,8 @@ class Admin::AuthorsController < Admin::AdminController
         format.html { redirect_to @author, notice: 'Author was successfully updated.' }
         format.json { render :show, status: :ok, location: @author }
       else
-        format.html { render :edit }
+        # format.html { render :edit }
+        format.html { render "admin/edit" }
         format.json { render json: @author.errors, status: :unprocessable_entity }
       end
     end

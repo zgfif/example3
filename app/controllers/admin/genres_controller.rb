@@ -30,8 +30,8 @@ class Admin::GenresController < Admin::AdminController
   def edit
   end
 
-  # POST /genres
-  # POST /genres.json
+ # POST /genres
+ # POST /genres.json
   def create
     @genre = Genre.new(genre_params)
 
@@ -41,11 +41,21 @@ class Admin::GenresController < Admin::AdminController
         format.json { render :show, status: :created, location: @genre }
         format.js
       else
-        format.html { render :new }
-        format.json { render json: @genre.errors, status: :unprocessable_entity }
+        # format.html {render "admin/genres/new"}
+         format.html { render :new }
+         format.json { render json: @genre.errors, status: :unprocessable_entity }
+          # format.json { render :json => { :error => @genre.errors } }
+          format.js 
       end
     end
   end
+  
+
+
+
+
+
+
 
   # PATCH/PUT /genres/1
   # PATCH/PUT /genres/1.json
