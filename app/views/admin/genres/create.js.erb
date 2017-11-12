@@ -1,6 +1,7 @@
 <% if @genre.errors.any? %>
     alert('you have errors. Please enter data to field');
     <% else %>
+    $('#genre_genre_name').val('');
     alert('Successfully added genre');
   <% end %>
 

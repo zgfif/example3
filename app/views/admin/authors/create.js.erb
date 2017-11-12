@@ -1,6 +1,8 @@
 <% if @author.errors.any? %>
     alert('you have errors. Please enter data to fields');
     <% else %>
+    $('#name_authors').val('');
+    $('#author_surname').val('');
     alert('Successfully added author');
   <% end %>
 // $('#rendering_of_form_author').empty();
