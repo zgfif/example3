@@ -1,33 +1,60 @@
-<h1>Statistics</h1>
+<h1>
+	<%= t('admin.statistic.stat') %>
+	<!-- Statistics -->
+</h1>
 
 <table class="table">
 	<tr>
-		<td>Users</td>
-		<td>total count:</td>
+		<td>
+			<!-- Users -->
+			<%= t('welcome.users') %>
+		</td>
+		<td><%= t('admin.statistic.total_count')%></td>
+		<!-- total count: -->
 		<td><%= @user_count %></td>
 	</tr>
 	<tr >
-		<td rowspan="3">Books</td>
-		<td>total added:</td>
+		<td rowspan="3">
+			<!-- Books -->
+			<%= t('welcome.books') %>
+		</td>
+		<td>
+				<!-- total added: -->
+				<%= t('admin.statistic.total_count_added')%>
+		</td>
 		<td><%= @book_count %></td>
 	</tr>
 	<tr>
 		
-		<td>total held:</td>
+		<td>
+			<!-- total held: -->
+			<%= t('admin.statistic.total_count_held')%>
+		</td>
 		<td><%= @book_held_count %></td>
 	</tr>
 	<tr>
 		
-		<td>total available:</td>
+		<td>
+			<!-- total available: -->
+			<%= t('admin.statistic.total_count_available')%>
+		</td>
 		<td><%= @book_available_count %></td>
 	</tr>
 	<tr>
-		<td>Locations</td>
-		<td>Count</td>
+		<td>
+			<%= t('welcome.locations') %>
+			<!-- Locations -->
+		</td>
+		<td>
+				<!-- Count -->
+			<%= t('admin.statistic.count')%>	
+		</td>
 		<td><%= @count_locations %></td>
 	</tr>
 	<tr>
-		<td rowspan= <%= @count_locations+1 %> >Count of books by locations</td>
+		<td rowspan= <%= @count_locations+1 %> ><%= t('admin.statistic.by_locations')%>
+			<!-- Count of books by locations: -->
+		</td>
 	</tr>
 		
 	<% @locations.each do |location| %>
@@ -41,7 +68,8 @@
 		</tr>
 	<% end %>							
 </table>
-<%= link_to 'Feedbacks', admin_feedbacks_path, class: "btn btn-info"%>
+<%= link_to t('welcome.feedbacks'), admin_feedbacks_path, class: "btn btn-info"%>
+<!-- 'Feedbacks' -->
  
 
 

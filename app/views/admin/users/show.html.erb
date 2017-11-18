@@ -1,52 +1,87 @@
 <!-- <p id="notice"><%= notice %></p> -->
 
 <p>
-  <strong>Name:</strong>
+  <strong>
+      <!-- Name: -->
+      <%= t('activerecord.attributes.user.name') %>:
+</strong>
   <%= @user.name %>
 </p>
 
 <p>
-  <strong>Surname:</strong>
+  <strong>
+      <!-- Surname: -->
+      <%= t('activerecord.attributes.user.surname') %>:
+</strong>
   <%= @user.surname %>
 </p>
 
 <p>
-  <strong>Phone:</strong>
+  <strong>
+            <!-- Phone: -->
+                  <%= t('activerecord.attributes.user.phone') %>:
+  </strong>
   <%= @user.phone %>
 </p>
 
 <p>
-  <strong>Email:</strong>
+  <strong>
+          <!-- Email: -->
+                <%= t('activerecord.attributes.user.email') %>:
+  </strong>
   <%= @user.email %>
 </p>
 
 <p>
-  <strong>Balance:</strong>
+  <strong>
+      <!-- Balance: -->
+            <%= t('activerecord.attributes.user.balance') %>:
+    </strong>
   <%= @user.balance %>
 </p>
 <p>
-  <strong><%= @user.name %> added</strong>
-  <%= @user.added %> books
+  <strong><%= @user.name %> 
+      
+        <!-- added -->
+              <%= t('user.added_to_locations') %>:
+</strong>
+  <%= @user.added %> 
+  <!-- books -->
 </p>
 <p>
-  <strong>Took from location:</strong>
+  <strong>
+        <!-- Took from location: -->
+        <%= t('user.took_from_locations') %>:
+  </strong>
   <%= @user.held %>
 </p>
 <p>
 <p>
-	Added by <%= @user.name %>:<br>
+  <strong>
+                    <%= t('activerecord.attributes.user.added') %>:<br>
+                    <!-- <%= t('user.added_to_locations') %> -->
+                    
+        <!-- Added by <%= @user.name %>:<br>   -->
+  </strong>
+	
 	<% @user.added_books.each do |added_book| %>
-		
-		|<%= link_to added_book.title, book_path(added_book) %>|  
+		    <%= link_to added_book.title, book_path(added_book) %> <br>     
 	<% end %> 
 </p>
 <p>
-	Held by <%= @user.name %>:<br>
+  <strong>  
+                  <%= t('activerecord.attributes.user.held') %>:<br>
+                  <!-- <%= t('user.took_from_locations') %> -->
+                  
+      <!-- Held by <%= @user.name %>:<br>   -->
+  </strong>
+	
 	<% @user.held_books.each do |held_book| %>
-		
-	<%= link_to held_book.title, book_path(held_book) %>|
+	       <%= link_to held_book.title, book_path(held_book) %>
 	<% end %> 
 </p>
 
-<%= link_to 'Edit profile', edit_admin_user_path(@user), class: "btn btn-warning" %> 
-<%= link_to 'Back', :back, class: "btn btn-secondary" %>
+<%= link_to t('action.edit_profile'), edit_admin_user_path(@user), class: "btn btn-warning" %> 
+<%= link_to t('common.back'), :back, class: "btn btn-secondary" %>
+<!-- 'Back' -->
+<!-- 'Edit profile' -->

@@ -3,18 +3,20 @@
 <!-- <p>Find desired books</p> -->
 <section class="container nav justify-content-center font_nav">
       <% if user_signed_in? %>
-        <span><%= link_to 'Books', books_path, class: "nav-item nav-link" %></span>      
+        <span><%= link_to t('welcome.books'), books_path, class: "nav-item nav-link" %></span>      
      <% end %>
-     <span><%= link_to 'Authors', authors_path, class: "nav-item nav-link" %></span>     
-     <span><%= link_to 'Genres', genres_path, class: "nav-item nav-link" %></span> 
-     <span><%= link_to 'Locations', locations_path, class: "nav-item nav-link" %></span>
+     <span><%= link_to t('welcome.authors'), authors_path, class: "nav-item nav-link" %></span>     
+     <span><%= link_to t('welcome.genres'), genres_path, class: "nav-item nav-link" %></span> 
+     <span><%= link_to t('welcome.locations'), locations_path, class: "nav-item nav-link" %></span>
      <% if user_signed_in?&&current_user.admin? %>
-           <span><%= link_to 'Users', admin_users_path, class: "nav-item nav-link" %></span>
+           <span><%= link_to t('welcome.users'), admin_users_path, class: "nav-item nav-link" %></span>
     <% end %>
 
 </section>
 
-<center><h1>Recent books</h1></center>
+<center>
+    <h1><%= t('welcome.recent') %></h1>
+</center>
     
 <div class="card-deck d-flex flex-nowrap">
 	   <% @books.each do |book| %>
@@ -29,18 +31,23 @@
                   <% if book.available? %>
                       <%#= "(available now) " %> 
                       <div>
-                          <span class="badge badge-primary">available now</span>
+                          <span class="badge badge-primary"><%= t('common.available') %></span>
+                          <!-- available now -->
                       </div>
                       
                   <%else %>
                       <%#= "(busy now)" %> 
                       <div>
-                          <span class="badge badge-secondary">busy now</span>  
+                          <span class="badge badge-secondary"><%= t('common.busy') %></span>  
+                          <!-- busy now -->
                       </div>
                       
                   <% end %>
                   <p class="card-text">
-                    <%= "Added "+book.created_at.strftime("%e %B")+" to " %> <%= link_to book.location.name , location_path(book.location)%> 
+                    <%= t('welcome.brought') %>
+                     <%= l book.created_at, :format=> :short %> 
+                    
+                    <!-- <%= " "+book.created_at.strftime("%e %B")+t('welcome.to') %> <%= link_to book.location.name , location_path(book.location)%>  -->
                   </p>  
           </div>   
             </div>
@@ -58,7 +65,12 @@
  -->
 
 
-<center><h1>Our locations</h1></center>
+<center>
+  <h1>
+    <!-- Our locations -->
+    <%= t('welcome.our_locations') %>
+  </h1>
+</center>
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 
   <div class="carousel-inner">

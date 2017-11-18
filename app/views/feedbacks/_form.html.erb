@@ -13,16 +13,18 @@
 
   <div class="form-group">
     <%= form.label :title %>
-    <%= form.text_field :title, id: :feedback_title , placeholder: 'Title', class: "form-control" %>
+    <%= form.text_field :title, id: :feedback_title , placeholder: t('activerecord.attributes.feedback.title'), class: "form-control" %>
+    <!-- title -->
   </div>
 
   <div class="form-group">
     <%= form.label :text %>
-    <%= form.text_area :text, id: :feedback_text, placeholder: 'Your feedback enter here', class: "form-control" %>
+    <%= form.text_area :text, id: :feedback_text, placeholder: t('feedback.whats_your_opinion_about'), class: "form-control" %>
+    <!-- 'Your feedback enter here' -->
   </div>
   
   
   <div class="actions">
-    <%= form.submit "Send", class: "btn btn-primary" %>
+    <%= form.submit t('action.send'), class: "btn btn-primary" %>
   </div>
 <% end %>

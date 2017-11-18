@@ -1,0 +1,54 @@
+en:
+  activerecord:
+    models:
+      genre: 'Genre'
+      user: 'User'
+      book: 'Book'
+      author: 'Author'
+      location: 'Location'
+      feedback: 'Feedback'
+    attributes:
+      feedback:
+        title: 'Title'
+        text: 'Text'
+      genre:
+        genre_name: 'Genre name'
+      user:
+        name: 'Name'
+        surname: 'Surname'
+        phone: 'Telephone'
+        email: 'e-mail'
+        password: 'Password'
+        password_confirmation: 'Password confirmation'
+        remember_me: 'Remember me'
+        balance: 'Balance of books'
+        added: 'Added'
+        held: 'Took'
+        admin: 'Admin'
+      author:
+        name: 'Name'
+        surname: 'Surname'
+      book:
+        title: 'Title'
+        language: 'Language'
+        description: 'Description'
+        balance: 'Balance'
+        image: 'Image'
+        available: 'Available'
+        user_id: 'User'     
+        author_id: 'Author'
+        genre_id: 'Genre'
+        location_id: 'Location'
+        holder_id: 'Taken by'
+        status: 'Status'
+      location:
+        name: 'Name'
+        address: 'Address'
+        description: 'Description'
+        email: 'e-mail'
+        telephone: 'Telephone'   
+    errors:
+      messages:
+        blank: 'can not be blank'
+    models:
+      

@@ -1,12 +1,18 @@
 <!-- <p id="notice"><%= notice %></p> -->
 
 <p>
-  <strong>Name:</strong>
+  <strong>
+      <!-- Name: -->
+      <%= t('activerecord.attributes.location.name') %>:
+  </strong>
   <%= @location.name %>
 </p>
 
 <p>
-  <strong>Address:</strong>
+  <strong>
+        <!-- Address: -->
+        <%= t('activerecord.attributes.location.address') %>:
+</strong>
   <%= @location.address %>
 </p>
 <div class="locations_size">
@@ -14,26 +20,37 @@
   <%= image_tag @location.picture  if @location.picture? %>
 </div>
 <p>
-  <strong>Description:</strong>
+  <strong>
+          <!-- Description: -->
+          <%= t('activerecord.attributes.location.description') %>:
+  </strong>
   <%= @location.description %>
 </p>
 
 <p>
-  <strong>Email:</strong>
+  <strong>
+        <!-- Email: -->
+        <%= t('activerecord.attributes.location.email') %>:
+  </strong>
   <%= @location.email %>
 </p>
 
 <p>
-  <strong>Telephone:</strong>
+  <strong>
+      <!-- Telephone: -->
+      <%= t('activerecord.attributes.user.phone') %>
+  </strong>
   <%= @location.telephone %>
 </p>
 <p>
-	This location has books:<br>
+	<!-- This location has books:<br> -->
 	<% @location.books.each do |book| %>
 		<%#= book.title %>
 		<%= link_to book.title, book_path(book) %><br>
 	
 	<% end %>
 </p>
-<%= link_to 'Edit', edit_admin_location_path(@location), class: "btn btn-warning" %> 
-<%= link_to 'Back', locations_path, class: "btn btn-secondary" %>
+<%= link_to t('action.edit'), edit_admin_location_path(@location), class: "btn btn-warning" %> 
+<!-- 'Edit' -->
+<%= link_to t('common.back'), locations_path, class: "btn btn-secondary" %>
+<!-- 'Back' -->

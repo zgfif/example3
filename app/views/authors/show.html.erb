@@ -1,21 +1,29 @@
 <!-- <p id="notice"><%= notice %></p> -->
 
 <p>
-  <strong>Name:</strong>
+  <strong>
+  		<!-- Name: -->
+  		<%= t('activerecord.attributes.author.name') %>:
+  </strong>
   <%= @author.name %>
 </p>
 
 <p>
-  <strong>Surname:</strong>
+  <strong>
+  		<!-- Surname: -->
+  		<%= t('activerecord.attributes.author.surname') %>:
+  	</strong>
   <%= @author.surname %>
 </p>
-This author has books in library:<br>
+<!-- This author has books in library:<br> -->
 <% @author.books.each do |book| %>
         <%#= book.title %>
-	|<%= link_to book.title, book_path(book) %>|
+	<%= link_to book.title, book_path(book) %>
 <% end %>
 </p>
 
 
-<%= link_to 'Edit', edit_admin_author_path(@author), class: "btn btn-warning" %> 
-<%= link_to 'Back', authors_path, class: "btn btn-secondary" %>
+<%= link_to t('action.edit'), edit_admin_author_path(@author), class: "btn btn-warning" %> 
+<%= link_to t('common.back'), authors_path, class: "btn btn-secondary" %>
+<!-- 'Edit' -->
+<!-- 'Back' -->

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- <html lang="en"> -->
   <head>
     <title>Booksget</title>
     <%= csrf_meta_tags %>
@@ -38,7 +38,7 @@
                                   </a>
                               </li> -->
                               <li class="nav-item active">
-                                  <%= link_to 'Back', :back, class: "nav-link padding_header" %>
+                                  <%= link_to t('common.back'), :back, class: "nav-link padding_header" %>
                               </li>  
                               <% end %>
                           </ul>
@@ -46,40 +46,47 @@
                           <ul class="navbar-nav">
                             <% if user_signed_in? %>
                                 <li class="nav-item nav-link active padding_header">
-                                    <%= current_user.name.present? ? "Hello, "+current_user.name : "Hello, "+current_user.email+"  "  %>
+                                    <%= current_user.name.present? ? t('header.hello')+", "+current_user.name : t('header.hello')+", "+current_user.email+"  "  %>
                                 </li>
                                 <li class="nav-item nav-link active padding_header">
-                                  <%= current_user.admin? ? "You're admin" : "" %>
+                                  <%= current_user.admin? ? t('header.admin') : "" %>
                                 </li>                                               
                                 <% if current_user.admin? %> 
                                 
-                                      <%= link_to 'Statistics ', admin_statistic_index_path, class: "nav-link active padding_header" %>
+                                      <%= link_to t('header.stat'), admin_statistic_index_path, class: "nav-link active padding_header" %>
                                                                     
                                 <% end %>
                                 <li class="nav-item" >
-                                     <%= link_to ' Profile', admin_user_path(current_user) , class: "nav-link active padding_header" %> 
+                                     <%= link_to t('header.profile'), admin_user_path(current_user) , class: "nav-link active padding_header" %> 
                                 </li>  
                                 <li class="nav-item">
-                                  <%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } , class: "nav-link disabled padding_header" %>
+                                  <%= link_to t('header.sign_out'), destroy_user_session_path, method: :delete, data: { confirm: t('action.are_you_sure') } , class: "nav-link disabled padding_header" %>
+                                  <!--  -->
                                 </li>
-                                      <%= link_to 'Add book', new_admin_book_path, class: 'btn btn-outline-primary pull-xs-right' ,id: 'style_of_add_book' %>
+                                      <%= link_to t('header.add_book'), new_admin_book_path, class: 'btn btn-outline-primary pull-xs-right' ,id: 'style_of_add_book' %>
 
                               <% else %>
                                   <li class="nav-item">
-                                        <%= link_to 'Sign in', new_user_session_path, class: "nav-link active padding_header" %>
+                                        <%= link_to t('header.sign_in'), new_user_session_path, class: "nav-link active padding_header" %>
                                   </li>
                                   <li>
-                                         <%= link_to 'Register', new_user_registration_path, class: "nav-link active" %>
+                                         <%= link_to t('header.register'), new_user_registration_path, class: "nav-link active" %>
                                   </li>  
                                      
-                              <% end %>    
+                              <% end %>
+                              <li class="nav-item<%= " active" if I18n.locale == :ru %>">
+                                <%= link_to 'Рус', {locale: :ru}, class: 'nav-link' %>
+                              </li>
+                              <li class="nav-item<%= " active" if I18n.locale == :en %>">
+                                <%= link_to 'Eng', {locale: :en}, class: 'nav-link' %>
+                              </li>    
                           </ul>
                         </div>                      
                                               
                   </nav> 
                   <div class="container search_margin_top">
                     <%= form_with url: search_path, local: true, method: :get do |form| %>
-                      <%= form.text_field :q, :size =>"50", placeholder: "Enter book, author or location", data:{behavior: "autocomplete"}, class: "form-control width_of_search" %>
+                      <%= form.text_field :q, :size =>"50", placeholder: t('search.placeholder'), data:{behavior: "autocomplete"}, class: "form-control width_of_search" %>
                       <%#= form.button "Search" %>
                     <% end %>
                   </div>
@@ -104,21 +111,22 @@
       <footer class="footer floating">
         <center>
                  <span>
-                <a href="http://github.com/zgfif/example3" target="_blank"> Our github </a> 
+                <!-- <a href="http://github.com/zgfif/example3" target="_blank"> Our github </a>  -->
+                <%= link_to t('footer.github'), 'http://github.com/zgfif/example3',:target => '_blank' %>
             </span> 
             <span>
-                <%= link_to 'About us', about_path %>  
+                <%= link_to t('footer.about'), about_path %>  
             </span>
        
             <!-- Coded by: Pavel Bratanov -->
             <span> 
-                <%= link_to 'Contacts', contact_path %> 
+                <%= link_to t('footer.contacts'), contact_path %> 
             </span>
             <span>
-                <%= link_to 'Our team', our_team_path %>  
+                <%= link_to t('footer.our_team'), our_team_path %>  
             </span>       
             <span>
-              <%= link_to 'Rules', rule_path %>  
+              <%= link_to t('footer.rules'), rule_path %>  
             </span>      
         </center>   
       </footer>    

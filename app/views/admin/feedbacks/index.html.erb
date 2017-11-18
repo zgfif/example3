@@ -1,12 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Feedbacks</h1>
+<h1>
+    <!-- Feedbacks -->
+    <%= t('welcome.feedbacks') %>
+</h1>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Text</th>
+      <th>
+        <%= t('activerecord.attributes.feedback.title') %>
+      <!-- Title -->
+     </th>
+      <th>
+          <!-- Text -->
+             <%= t('activerecord.attributes.feedback.text') %>
+      </th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,9 +25,12 @@
       <tr>
         <td><%= feedback.title %></td>
         <td><%= feedback.text %></td>
-        <td><%= link_to 'Show', admin_feedback_url(feedback) %></td>
-        <td><%= link_to 'Edit', edit_admin_feedback_path(feedback) %></td>
-        <td><%= link_to 'Destroy', admin_feedback_url(feedback), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('action.show'), admin_feedback_url(feedback) %></td>
+        <td><%= link_to t('action.edit'), edit_admin_feedback_path(feedback) %></td>
+        <td><%= link_to t('action.destroy'), admin_feedback_url(feedback), method: :delete, data: { confirm: t('action.are_you_sure') } %></td>
+        <!-- 'Destroy' -->
+        <!-- 'Edit' -->
+        <!-- 'Show' -->
       </tr>
     <% end %>
   </tbody>

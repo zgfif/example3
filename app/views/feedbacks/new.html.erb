@@ -1,5 +1,9 @@
-<h1 class="text_in_one_row">New Feedback</h1>
+<h1 class="text_in_one_row">
+		<!-- New Feedback -->
+		<%= t('feedback.your_feedback') %>
+</h1>
 
 <%= render 'form', feedback: @feedback %>
 
-<%= link_to 'Back', admin_feedbacks_path, class: 'btn btn-secondary' %>
+<%= link_to t('common.back'), admin_feedbacks_path, class: 'btn btn-secondary' %>
+<!-- 'Back' -->

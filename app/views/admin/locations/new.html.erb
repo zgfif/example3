@@ -1,5 +1,9 @@
-<h1>New Location</h1>
+<h1 class="text_in_one_row">
+	<!-- New Location -->
+	<%= t('location.new_location') %>
+</h1>
 
 <%= render 'form', location: @location %>
 
-<%= link_to 'Back', locations_path, class: 'btn btn-secondary' %>
+<%= link_to t('common.back'), locations_path, class: 'btn btn-secondary' %>
+<!-- 'Back' -->

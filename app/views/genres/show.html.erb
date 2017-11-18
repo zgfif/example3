@@ -1,17 +1,19 @@
 <!-- <p id="notice"><%= notice %></p> -->
 
 <p>
-  <strong>Genre name:</strong>
+	<strong><%= label :genre, :genre_name %></strong><br>
+	
+  <!-- <strong>Genre name:</strong> -->
   <%= @genre.genre_name %>
 </p>
 <p>
-This genre has books:<br>
+<!-- This genre has books:<br> -->
 <% @genre.books.each do |book| %>
 	<%#= book.title %>
-	|<%= link_to book.title, book_path(book) %>|
+	<%= link_to book.title, book_path(book) %> <br>
 
 <% end %>
 </p>
 
-<%= link_to 'Edit', edit_admin_genre_path(@genre), class: "btn btn-warning" %> 
-<%= link_to 'Back', genres_path , class: "btn btn-secondary" %>
+<%= link_to t('action.edit'), edit_admin_genre_path(@genre), class: "btn btn-warning" %> 
+<%= link_to t('common.back'), genres_path , class: "btn btn-secondary" %>

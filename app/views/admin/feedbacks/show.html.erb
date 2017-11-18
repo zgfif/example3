@@ -1,14 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>
+  		<%= t('activerecord.attributes.feedback.title') %>:
+  		<!-- Title: -->
+  	</strong>
   <%= @feedback.title %>
 </p>
 
 <p>
-  <strong>Text:</strong>
+  <strong>
+		  <!-- Text: -->
+		  <%= t('activerecord.attributes.feedback.text') %>:
+</strong>
   <%= @feedback.text %>
 </p>
 
-<%= link_to 'Edit', edit_admin_feedback_path(@feedback) %> |
-<%= link_to 'Back', admin_feedbacks_path %>
+<%= link_to t('action.edit'), edit_admin_feedback_path(@feedback), class: "btn btn-warning"  %> 
+<!-- 'Edit' -->
+<%= link_to t('common.back'), admin_feedbacks_path, class: "btn btn-secondary"  %>
+<!-- 'Back' -->

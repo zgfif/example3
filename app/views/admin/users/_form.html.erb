@@ -13,19 +13,22 @@
   <div class="form-row" >
           <div class="form-group col-md-6">
             <%= form.label :name, class: "col-form-label", class: "col-form-label" %>
-            <%= form.text_field :name, id: :user_name, placeholder: "First name", class: "form-control" %>
+            <%= form.text_field :name, id: :user_name, placeholder: t('user.users_name'), class: "form-control" %>
+            <!-- "First name" -->
           </div>
 
           <div class="form-group col-md-6">
             <%= form.label :surname, class: "col-form-label"  %>
-            <%= form.text_field :surname, id: :user_surname, placeholder: "Last name",class: "form-control" %>
+            <%= form.text_field :surname, id: :user_surname, placeholder: t('user.users_surname'),class: "form-control" %>
+            <!-- "Last name" -->
           </div>
   </div>
 
   <div  class="form-row">
       <div class="form-group col-md-6">
         <%= form.label :phone %>
-        <%= form.text_field :phone, id: :user_phone, placeholder: "Phone number", class: "form-control" %>
+        <%= form.text_field :phone, id: :user_phone, placeholder: t('user.phone_number'), class: "form-control" %>
+        <!-- "Phone number" -->
       </div>
 
 
@@ -41,18 +44,17 @@
         <!-- <% if @minimum_password_length %> -->
         <!-- <em>(<%= @minimum_password_length %> characters minimum)</em> -->
         <!-- <% end %><br /> -->
-        <%= form.password_field :password, autocomplete: "on", placeholder: "password", class: "form-control" %>
+        <%= form.password_field :password, autocomplete: "on", placeholder: t('activerecord.attributes.user.password'), class: "form-control" %>
+        <!-- "password" -->
     </div>
  
     <div class="form-group col-md-6">
         <%= form.label :password_confirmation %><br />
-        <%= form.password_field :password_confirmation, autocomplete: "on", autofill: true, placeholder: "repeat password", class: "form-control" %>
+        <%= form.password_field :password_confirmation, autocomplete: "on", autofill: true, placeholder: t('user.repeat_password'), class: "form-control" %>
+        <!-- "repeat password" -->
     </div> 
  </div>
-<% end %>
-  
-
-
+<% end %>  
   <div class="field">
     <%#= form.label :rating %>
     <%#= form.hidden_field :rating, id: :user_rating, :value => "0" %>
@@ -65,7 +67,8 @@
     <%= form.hidden_field :held, id: :user_added %>
   </div> 
   <div class="actions">
-    <%= form.submit class:'btn btn-primary' %>
-    <%= link_to 'Back', admin_users_path, class: 'btn btn-outline-secondary' %>
+    <%= form.submit t('.submit', action: @user.new_record? ? t('common.add') : t('common.change')), class:'btn btn-primary' %>
+    <%= link_to t('common.back'), admin_users_path, class: 'btn btn-secondary' %>
+    <!-- 'Back' -->
   </div>
 <% end %>

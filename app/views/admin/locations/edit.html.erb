@@ -1,6 +1,10 @@
-<h1>Editing Location</h1>
+<h1>
+		<!-- Editing Location -->
+		<%= t('location.editing_location') %>
+</h1>
 
 <%= render 'form', location: @location %>
 
-<%= link_to 'Show', @location %> |
-<%= link_to 'Back', :back %>
+<!-- <%= link_to 'Show', @location %>  -->
+<%= link_to t('common.back'), :back ,class: 'btn btn-secondary' %>
+<!-- 'Back' -->

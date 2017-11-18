@@ -13,12 +13,14 @@
 
   <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :author_name, placeholder: "Author's name", class: "form-control", id: "name_authors" %>
+    <%= form.text_field :name, id: :author_name, placeholder: t('author.authors_name'), class: "form-control", id: "name_authors" %>
+    <!-- "Author's name" -->
   </div>
 
   <div class="form-group">
     <%= form.label :surname %>
-    <%= form.text_field :surname, id: :author_surname, placeholder: "Author's surname", class: "form-control" %>
+    <%= form.text_field :surname, id: :author_surname, placeholder: t('author.authors_surname'), class: "form-control" %>
+    <!-- "Author's surname" -->
   </div>
 
   <div class="actions">
@@ -30,6 +32,6 @@
                 })();
 </script>
   
-    <%= form.submit  class:'btn btn-primary', id: 'submit_author' %>
+    <%= form.submit  t('.submit', action: @author.new_record? ? t('common.add') : t('common.change')), class:'btn btn-primary', id: 'submit_author' %>
   </div>
 <% end %>

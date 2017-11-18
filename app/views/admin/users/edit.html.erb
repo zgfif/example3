@@ -1,6 +1,10 @@
-	<h1>Edit profile</h1>
+	<h1 class="text_in_one_row">
+			<!-- Edit profile -->
+			<%= t('user.editing_user') %>
+	</h1>
 
 <%= render 'form', user: @user %>
-<%= link_to 'Update password and/or e-mail', edit_user_registration_path(current_user), class: "btn btn-warning" %><br>
+<%= link_to t('user.update_pass_and_or_email'), edit_user_registration_path(current_user), class: "btn btn-warning" %><br>
+<!-- 'Update password and/or e-mail' -->
 <%#= link_to 'Show', admin_user_path, class: 'btn btn-outline-secondary' %> 
 <%#= link_to 'Back', :back, class: 'btn btn-secondary' %>

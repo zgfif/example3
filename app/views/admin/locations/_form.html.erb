@@ -1,8 +1,8 @@
 <%= form_with(model: [:admin, location], html:{multipart: true}, local: true) do |form| %>
   <% if location.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(location.errors.count, "error") %> prohibited this location from being saved:</h2>
-
+      <h2><%= pluralize(location.errors.count, "error") %> <%= t('common.errors') %></h2>
+      <!-- prohibited this location from being saved: -->
       <ul>
       <% location.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -15,43 +15,50 @@
     <%#= form.file_field :picture, id: :location_picture, class: "form-control-file" %>
   </div>
   <div class="form-group">
-   <%= form.file_field :picture, id: :location_image, 'data-placeholder':"No file",'data-buttonBefore':"true",'data-text':"Add image",'data-btnClass':"btn-primary", class: "filestyle" %>  
+   <%= form.file_field :picture, id: :location_image, 'data-placeholder':t('book.no_file'),'data-buttonBefore':"true",'data-text':t('book.add_image'),'data-btnClass':"btn-primary", class: "filestyle" %>  
+   <!-- "Add image" -->
+   <!-- "No file" -->
    <!-- <input type="file" class="filestyle" data-btnClass="btn-primary"> -->
   </div>
   
 <div class="form-row">
         <div class="form-group col-md-6">
           <%= form.label :name %>
-          <%= form.text_field :name, id: :location_name, placeholder: "Location's name", class: "form-control" %>
+          <%= form.text_field :name, id: :location_name, placeholder: t('location.location_name'), class: "form-control" %>
+          <!-- "Location's name" -->
         </div>
 
         <div class="form-group col-md-6">
           <%= form.label :address %>
-          <%= form.text_area :address, id: :location_address, placeholder: "Full address of location(city, street, zip, etc)", class: "form-control" %>
+          <%= form.text_area :address, id: :location_address, placeholder: t('location.full_location_address'), class: "form-control" %>
+          <!-- "Full address of location(city, street, zip, etc)" -->
         </div>
 </div>
   
 
   <div class="form-group">
     <%= form.label :description %>
-    <%= form.text_area :description, id: :location_description, placeholder: "Usefull information about location" , class: "form-control" %>
+    <%= form.text_area :description, id: :location_description, placeholder:t('location.usefull_info_location'), class: "form-control" %>
+     <!-- "Usefull information about location"  -->
   </div>
 
 <div class="form-row">
     <div class="form-group col-md-6">
     <%= form.label :email %>
-    <%= form.text_field :email, id: :location_email, placeholder: "e-mail" ,class: "form-control" %>
+    <%= form.text_field :email, id: :location_email, placeholder: t('activerecord.attributes.location.email'),class: "form-control" %>
+    <!-- "e-mail"  -->
   </div>
 
   <div class="form-group col-md-6">
     <%= form.label :telephone %>
-    <%= form.text_field :telephone, id: :location_telephone, placeholder: "phone number", class: "form-control" %>
+    <%= form.text_field :telephone, id: :location_telephone, placeholder: t('activerecord.attributes.user.phone'), class: "form-control" %>
+    <!-- "phone number" -->
   </div>
 
 
 </div>
   
   <div class="actions">
-    <%= form.submit class: "btn btn-primary" %>
+    <%= form.submit t('.submit', action: @location.new_record? ? t('common.add') : t('common.change')), class: "btn btn-primary" %>
   </div>
 <% end %>

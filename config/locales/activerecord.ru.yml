@@ -1,0 +1,54 @@
+ru:
+  activerecord:
+    models:
+      genre: 'Жанр'
+      user: 'Пользователь'
+      book: 'Книга'
+      author: 'Автор'
+      location: 'Локация'
+      feedback: 'Отзыв'
+    attributes:
+      feedback:
+        title: 'Заголовок'
+        text: 'Текст'
+      genre:
+        genre_name: 'Название жанра'
+      user:
+        name: 'Имя'
+        surname: 'Фамилия'
+        phone: 'Телефон'
+        email: 'Эл. почта'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+        remember_me: 'Запомнить меня'
+        balance: 'Баланс книг'
+        added: 'Добавлено'
+        held: 'Взято'
+        admin: 'Админ'
+      author:
+        name: 'Имя'
+        surname: 'Фамилия'
+      book:
+        title: 'Заголовок'
+        language: 'Язык'
+        description: 'Описание'
+        balance: 'Баланс'
+        image: 'Изображение'
+        available: 'Доступна'
+        user_id: 'Пользователь'     
+        author_id: 'Автор'
+        genre_id: 'Жанр'
+        location_id: 'Локация'
+        holder_id: 'Пользуется книгой сейчас'
+        status: 'Статус'
+      location:
+        name: 'Название'
+        address: 'Адрес'
+        description: 'Описание'
+        email: 'Эл. почта'
+        telephone: 'Телефон'   
+    errors:
+      messages:
+        blank: 'не может быть пустым'
+    models:
+      

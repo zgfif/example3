@@ -1,0 +1,146 @@
+ru:
+  time:
+    formats:
+      default: "%d/%m/%Y %H:%M"
+      short: "%e %B"
+  date:
+    formats:
+      # Use the strftime parameters for formats.
+      # When no format has been given, it uses default.
+      # You can provide other formats here if you like!
+      default: "%d/%m/%Y"
+      short: "%b %d"
+      long: "%B %d, %Y"
+      welc: "%e %B"
+  header:
+    hello: 'Здравствуйте'
+    admin: 'Вы админ'
+    stat: 'Статистика'
+    profile: 'Профиль'
+    sign_out: 'Выйти'
+    add_book: 'Добавить книгу'
+    register: 'Регистрация'
+    sign_in: 'Вход'
+  search:
+    placeholder: 'Введите книгу, автора или локацию'
+  footer:
+    about: 'О нас'
+    contacts: 'Контакты'
+    our_team: 'Наша команда'
+    rules: 'Правила'
+    github: 'Наш гитхаб'    
+  common:
+    add: 'Добавить'
+    change: 'Изменить'
+    errors: 'при заполении формы возникли ошибки' 
+    back: 'Назад'
+    available: 'доступная сейчас'
+    busy: 'сейчас недоступна'    
+  admin:
+    statistic:
+      stat: 'Статистика'
+      by_locations: 'Количество книг в каждой локации'
+      count: 'Кол-во'
+      total_count: 'Общее кол-во'
+      total_count_added: 'Общее кол-во добавленных'
+      total_count_held: 'Общее кол-во взятых'
+      total_count_available: 'Общее кол-во доступных книг'     
+    genres:
+      new:
+        title_page: 'Новый жанр'
+      edit:
+        title_page: 'Редактировать жанр'  
+      form:
+        submit: 
+          '%{action} жанр'
+    book:      
+      new: 
+        new_book: 'Новая книга'
+      edit:
+        editing_book: 'Редактирование книги' 
+        title_page: 'Редактировать книгу'      
+    books:
+      added_user: 'Добавлена пользователем'
+      form:
+        submit: '%{action} книгу'
+    authors:
+      editing_author: 'Редактирование автора' 
+      form:
+        submit: '%{action} автора'
+    locations:
+      form:
+        submit: '%{action} локацию'
+    users:
+      form:
+        submit: '%{action} пользователя'                
+  welcome:
+    feedbacks: 'Отзывы'
+    books: 'Книги'        
+    authors: 'Авторы'
+    genres: 'Жанры'
+    locations: 'Локации'
+    users: 'Пользователи'
+    recent: 'Последние книги'
+    brought: 'Поступила'
+    to: ' в '
+    our_locations: 'Наши локации'
+  session:
+    enter_email: 'введите электронную почту'  
+    never_share: 'Мы никогда не распространяем ваши персональные данные'
+    password: 'ваш пароль'
+    remember_me: 'Запомнить меня'
+    log_in: 'Войти'
+    forgot_pass: 'Забыли пароль?'
+    did_not_recieve_confirm: 'Не получали инструкцию подтверждения регистрации?'    
+  book:
+    destroy_book: 'Удалить книгу'
+    add_book: 'Добавить книгу'
+    no_file: 'файл не выбран'
+    add_image: 'добавить изображение'
+    please_select_who_brought_this_book: 'Пожалуйста, выберите пользователся кто принёс эту книгу'
+    brief_description: 'Краткое описание книги'
+    this_field_indicates: 'Это поле указывает на пользователя, взявшего книгу из локации. Если книга сейчас в локации, выберите:'
+    no_holder: 'доступная'
+    add_new_location: 'добавить новую локацию'
+    add_new_genre: 'добавить новый жанр'
+    add_new_author: 'добавить нового автора'
+    available_in_location: 'сейчас доступна в локации'    
+  author:  
+    new_author: 'Новый автор'
+    authors_name: 'имя автора (можно с отчеством)'
+    authors_surname: 'фамилия автора'
+  genre: 
+    add_genre: 'Добавить жанр'
+  location:
+    editing_location: 'Редактирование локации' 
+    add_location: 'Добавить локацию'
+    new_location: 'Новая локация'
+    location_name: 'Название локации'
+    full_location_address: 'Полный адрес локации (город, индекс, улица, и т.п.)'
+    usefull_info_location: 'Полезная информация о локации'
+  user:
+
+    added_to_locations: 'добавил в локации (книг)'
+    took_from_locations: 'забрал из локаций (книг)'
+    editing_user: 'Редактирование пользователя'
+    repeat_password: 'Повторите пароль'
+    phone_number: 'Номер телефона'
+    users_name: 'Имя пользователя'
+    users_surname: 'Фамилия  пользователя'
+    add_user: 'Добавить нового пользователя'
+    new_user: 'Новый пользователь'        
+    update_pass_and_or_email: 'Обновить пароль и/или эл. почту'
+  action:
+    show: 'Показать'
+    edit: 'Редактировать'
+    edit_profile: 'Редактировать профиль'
+    destroy: 'Удалить'
+    are_you_sure: 'Вы уверены?'
+    send: 'Отправить'
+  feedback:
+    editing_feedback: 'Редактирование отзыва'
+    whats_your_opinion_about: 'Ваше мнение о ресурсе?'
+    your_feedback: 'Ваш отзыв'
+    leave_feedback: 'Оставить отзыв'
+  pages:
+    our_ruby_team: 'Наша ruby-команда'  

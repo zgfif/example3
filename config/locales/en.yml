@@ -1,33 +1,146 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  time:
+    formats:
+      default: "%d/%m/%Y %H:%M"
+      short: "%e %B"
+  date:
+    formats:
+      # Use the strftime parameters for formats.
+      # When no format has been given, it uses default.
+      # You can provide other formats here if you like!
+      default: "%d/%m/%Y"
+      short: "%b %d"
+      long: "%B %d, %Y"
+      welc: "%e %B"
+  header:
+    hello: 'hello'
+    admin: 'ADMIN'
+    stat: 'Statistics'
+    profile: 'Profile'
+    sign_out: 'Sign out'
+    add_book: 'Add book'
+    register: 'Register'
+    sign_in: 'Sign in'
+  search:
+    placeholder: 'Enter book, author or location'
+  footer:
+    about: 'About us'
+    contacts: 'Contacts'
+    our_team: 'Our team'
+    rules: 'Rules'
+    github: 'Our github'    
+  common:
+    add: 'Add'
+    change: 'Change'
+    errors: 'got errors in fields' 
+    back: 'Back'
+    available: 'available now'
+    busy: 'busy now'    
+  admin:
+    statistic:
+      stat: 'Statistics'
+      by_locations: 'Count of books by locations'
+      count: 'Count'
+      total_count: 'Total count'
+      total_count_added: 'Total count of added'
+      total_count_held: 'Total count of taken'
+      total_count_available: 'Total count of available books'     
+    genres:
+      new:
+        title_page: 'New genre'
+      edit:
+        title_page: 'Edit genre'  
+      form:
+        submit: 
+          '%{action} genre'
+    book:      
+      new: 
+        new_book: 'New book'
+      edit:
+        editing_book: 'Editing book' 
+        title_page: 'Edit book'      
+    books:
+      added_user: 'Added by user'
+      form:
+        submit: '%{action} book'
+    authors:
+      editing_author: 'Editing author' 
+      form:
+        submit: '%{action} author'
+    locations:
+      form:
+        submit: '%{action} location'
+    users:
+      form:
+        submit: '%{action} user'                
+  welcome:
+    feedbacks: 'Feedbaks'
+    books: 'Books'        
+    authors: 'Authors'
+    genres: 'Genres'
+    locations: 'Locations'
+    users: 'Users'
+    recent: 'Recent books'
+    brought: 'Brought'
+    to: ' to '
+    our_locations: 'Our locations'
+  session:
+    enter_email: 'enter e-mail'  
+    never_share: 'We will never share your private information'
+    password: 'your password'
+    remember_me: 'Remember me'
+    log_in: 'Log in'
+    forgot_pass: 'Forot the password?'
+    did_not_recieve_confirm: 'Did not receive confirmation instructions?'    
+  book:
+    destroy_book: 'Destroy book'
+    add_book: 'Add book'
+    no_file: 'no file'
+    add_image: 'add image'
+    please_select_who_brought_this_book: 'Please select the user who brought this book'
+    brief_description: 'Brief description of book'
+    this_field_indicates: 'This field indicates the user who took the book from the location. If the book in the location now, select:'
+    no_holder: 'no holder'
+    add_new_location: 'add new location'
+    add_new_genre: 'add new genre'
+    add_new_author: 'add new author'
+    available_in_location: 'available in location'    
+  author:  
+    new_author: 'New author'
+    authors_name: 'First name'
+    authors_surname: 'Last name'
+  genre: 
+    add_genre: 'Add genre'
+  location:
+    editing_location: 'Editing location' 
+    add_location: 'Add location'
+    new_location: 'New location'
+    location_name: 'Location name'
+    full_location_address: 'Full address (city, zip, street, etc)'
+    usefull_info_location: 'Usefull info about location'
+  user:
+
+    added_to_locations: 'added to locations (books)'
+    took_from_locations: 'took from locations (books)'
+    editing_user: 'Editing user'
+    repeat_password: 'Repeat password'
+    phone_number: 'Номер телефона'
+    users_name: 'Name'
+    users_surname: 'Surname'
+    add_user: 'Add new user'
+    new_user: 'New user'        
+    update_pass_and_or_email: 'update password and(or) email'
+  action:
+    show: 'Show'
+    edit: 'Edit'
+    edit_profile: 'Edit profile'
+    destroy: 'Destroy'
+    are_you_sure: 'Are you sure?'
+    send: 'Send'
+  feedback:
+    editing_feedback: 'Editing feedback'
+    whats_your_opinion_about: 'What do think about our service?'
+    your_feedback: 'Your feedback'
+    leave_feedback: 'Make feedback'
+  pages:
+    our_ruby_team: 'Our ruby-team'  

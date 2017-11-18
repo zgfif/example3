@@ -25,7 +25,9 @@
   </div>
 
   <div class="form-group">
-   <%= form.file_field :image, id: :book_image, 'data-placeholder':"No file",'data-buttonBefore':"true",'data-text':"Add image",'data-btnClass':"btn-primary", class: "filestyle" %>  
+   <%= form.file_field :image, id: :book_image, 'data-placeholder':t('book.no_file'),'data-buttonBefore':"true",'data-text':t('book.add_image'),'data-btnClass':"btn-primary", class: "filestyle" %>  
+   <!-- +"No file" -->
+   <!-- +"Add image" -->
    <!-- <input type="file" class="filestyle" data-btnClass="btn-primary"> -->
   </div>
   
@@ -36,12 +38,16 @@
 
   <div class="form-group">
     <%= form.label :description %>
-    <%= form.text_area :description, id: :book_description, placeholder: "Book's brief description", class: "form-control" %>
+    <%= form.text_area :description, id: :book_description, placeholder: t('book.brief_description'), class: "form-control" %>
+    <!-- "Book's brief description" -->
   </div>
 
   <div class="form-group">
     <%= form.label :user_id %>
-    <p class="text-muted">Please select the user who brought the book</p>
+    <p class="text-muted">
+      <%= t('book.please_select_who_brought_this_book') %>
+      <!-- Please select the user who brought the book -->
+    </p>
     <%= form.collection_select(:user_id, User.all, :id, :name_with_initial ,{}, class: 'form-control line_select') %>
     <%#= form.collection_select(:user_id, User.all, :id, :name) %>
   </div>
@@ -58,7 +64,8 @@
   <div class="form-group" >
         <%= form.label :author_id %>
         <div id="author_area">
-            <%= form.select(:author_id, Author.all.collect {|p| [ p.name+" "+p.surname, p.id]} + [ ['add new author', 'new']],{:selected =>Author.last.id.to_i}, {:onchange => "newAuthor();", id: 'author_select', class: "form-control line_select", data: {remote: true, url: url_for( action: 'new_author_at_book', controller: '/admin/authors')}}) %>  
+            <%= form.select(:author_id, Author.all.collect {|p| [ p.name+" "+p.surname, p.id]} + [ [t('book.add_new_author'), 'new']],{:selected =>Author.last.id.to_i}, {:onchange => "newAuthor();", id: 'author_select', class: "form-control line_select", data: {remote: true, url: url_for( action: 'new_author_at_book', controller: '/admin/authors')}}) %>  
+            <!-- 'add new author' -->
         </div>
   </div>
 
@@ -66,7 +73,8 @@
   <div class="form-group">
     <%= form.label :genre_id %>
     <div id="genre_area">
-        <%= form.select(:genre_id, Genre.all.collect {|p| [ p.genre_name, p.id ] } + [ ['add new genre', 'new']],{:selected =>Genre.last.id.to_i},{:onchange => "newGenre();", id: 'genre_select', id: 'genre_select', class: 'form-control line_select', data: {remote: true, url: url_for( action: 'new_genre_at_book', controller: '/admin/genres')}}) %>  
+        <%= form.select(:genre_id, Genre.all.collect {|p| [ p.genre_name, p.id ] } + [ [t('book.add_new_genre'), 'new']],{:selected =>Genre.last.id.to_i},{:onchange => "newGenre();", id: 'genre_select', id: 'genre_select', class: 'form-control line_select', data: {remote: true, url: url_for( action: 'new_genre_at_book', controller: '/admin/genres')}}) %>  
+        <!-- 'add new genre' -->
     </div>
     
     <%#= form.collection_select(:genre_id, Genre.all, :id, :genre_name) %>
@@ -77,7 +85,8 @@
   <div class="form-group">
     <%= form.label :location_id %>
     <%#= form.collection_select(:location_id, Location.all, :id, :name) %>
-    <%= form.select(:location_id, Location.all.collect {|p| [ p.name, p.id ] } + [ ['add new location', 'new']],{},{:onchange => "newLocation();",class:'form-control line_select'}) %>
+    <%= form.select(:location_id, Location.all.collect {|p| [ p.name, p.id ] } + [ [t('book.add_new_location'), 'new']],{},{:onchange => "newLocation();",class:'form-control line_select'}) %>
+    <!-- 'add new location' -->
   </div>
   <!-- <div class="field"> -->
     <%#= form.label :rating %>
@@ -86,13 +95,22 @@
   <div class="form-group">
 
     <%= form.label :holder_id %>
-    <p class="text-muted">This field indicates the user who took the book from the location. If the book in the location now, select:<b> no holder</b></p>
-    <%= form.collection_select(:holder_id, User.all, :id, :name_with_initial, {include_blank: 'no holder'}, {:class=>"form-control line_select"}) %>
+    <p class="text-muted">
+      <%= t('book.this_field_indicates') %>
+      <!-- This field indicates the user who took the book from the location. If the book in the location now, select: -->
+      <b> 
+       <%= t('book.no_holder') %>
+        <!-- no holder -->
+      </b>
+    </p>
+    <%= form.collection_select(:holder_id, User.all, :id, :name_with_initial, {include_blank:  t('book.no_holder') }, {:class=>"form-control line_select"}) %>
     <%#= form.collection_select(:user_id, User.all, :id, :name) %>
+    <!-- 'no holder' -->
   </div>
   <div class="actions">
-    <%= form.submit class:'btn btn-primary'%>
-    <%= link_to 'Back', :back, class:'btn btn-secondary'%>
+    <%= form.submit t('.submit', action: @book.new_record? ? t('common.add') : t('common.change')), class:'btn btn-primary'%>
+    <%= link_to t('common.back'), :back, class:'btn btn-secondary'%>
+    <!-- 'Back' -->
   </div>
 <% end %>
 <%#= render "admin/authors/form" %>

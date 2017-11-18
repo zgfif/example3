@@ -1,6 +1,10 @@
-<h1>Editing Feedback</h1>
+<h1>
+		<!-- Editing Feedback -->
+		<%= t('feedback.editing_feedback') %>
+</h1>
 
 <%= render 'form', feedback: @feedback %>
 
-<%= link_to 'Show', admin_feedback_url(@feedback) %> |
-<%= link_to 'Back', admin_feedbacks_path %>
+<!-- <%= link_to 'Show', admin_feedback_url(@feedback) %> | -->
+<%= link_to t('common.back'), admin_feedbacks_path, class: 'btn btn-secondary' %>
+<!-- 'Back' -->
