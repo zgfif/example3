@@ -1,106 +1,78 @@
 
 <div class="container">
-    <h2><%= @book.title %></h2> 
-
-<p>
-  <strong>id:</strong>
-  <%= @book.id %>
-</p>
-<p>
-    
-    <strong>
-                    
-            <%= t('activerecord.attributes.book.status') %>:
-      </strong>
-  <% if @book.available? %>
-          <%= t('common.available') %>
+    <h2>
+        <%= @book.title %>
+    </h2> 
+    <p>
+        <strong>id:</strong>
+        <%= @book.id %>
+    </p>
+    <p>
+        <strong> <%= t('activerecord.attributes.book.status') %>: </strong>
+        <% if @book.available? %>
+              <%= t('common.available') %>
           <!-- "available now" -->
-    <%else %>
-          <%= t('common.busy') %>
+        <%else %>
+              <%= t('common.busy') %>
           <!-- <%= "busy now" %> -->
-  <% end %>
-</p>
-<p>
-   <strong>
-           
-            <%= t('activerecord.attributes.book.language') %>:
-  </strong>
-  <%= @book.language %>
-</p>
-<div class="books_size">
-  <%= image_tag @book.image if @book.image? %>
-</div>
-<p>
-  <strong>
-      <!-- Description: -->
-      <%= t('activerecord.attributes.book.description') %>:
-    </strong>
-  <%= @book.description %>
-</p>
-
-<p>
-  <strong>
-      <!-- Added by: -->
-      <%= t('admin.books.added_user') %>:
-
-    </strong>
-  <%= @book.user.name.present? && @book.user.surname.present? ? @book.user.name+" "+@book.user.surname : @book.user.email %>
-</p>
-
-<p>
-  <strong>
-        <%= t('activerecord.attributes.book.author_id') %>:
+        <% end %>
+    </p>
+    <p>
+        <strong> <%= t('activerecord.attributes.book.language') %>: </strong>
+        <%= @book.language %>
+    </p>
+    <div class="books_size">
+        <%= image_tag @book.image if @book.image? %>
+    </div>
+    <p>
+        <strong> <%= t('activerecord.attributes.book.description') %>: </strong>
+          <!-- Description: -->
+        <%= @book.description %>
+    </p>
+    <p>
+        <strong> <%= t('admin.books.added_user') %>: </strong>
+        <!-- Added by: -->
+        <%= @book.user.name.present? && @book.user.surname.present? ? @book.user.name+" "+@book.user.surname : @book.user.email %>
+    </p>  
+    <p>
+        <strong> <%= t('activerecord.attributes.book.author_id') %>: </strong">
         <!-- Author: -->
-        
-  </strong">
-    <%= @book.author.name+" "+@book.author.surname %>
-</p>
-
-<p>
-  <strong>
-      <!-- Genre: -->
-      <%= t('activerecord.attributes.book.genre_id') %>:
-    </strong>
-  <%= @book.genre.genre_name %>
-</p>
-<p>
-  <strong>
-          <!-- Location: -->
-          <%= t('activerecord.attributes.book.location_id') %>:
-  </strong>
-  <%= @book.location.name %>
-</p>
-<!-- <p> -->
-  <!-- <strong>Rating:</strong> -->
-  <!-- <%= @book.rating %> -->
-<!-- </p> -->
-<p>
-
-  <% if @book.holder.present? %>
-      <strong>
-        <!-- Holder: -->
-         <%= t('activerecord.attributes.book.holder_id') %>:
-  </strong>
-      <% if @book.holder.name.present? && @book.holder.surname.present? %>
-          <%= @book.holder.name + " " + @book.holder.surname  %> 
-        <% else %>
-          <%= @book.holder.email %>
-          
-      <% end %>
-    <%else %>
-        <!-- <%= t('book.available_in_location') %>  -->
-        <!-- <%='no holder'%> -->
-  <% end %>
-</p> 
-
-
+        <%= @book.author.name+" "+@book.author.surname %>
+    </p>
+    <p>
+        <strong> <%= t('activerecord.attributes.book.genre_id') %>: </strong>
+        <!-- Genre: -->
+        <%= @book.genre.genre_name %>
+    </p>
+    <p>
+        <strong> <%= t('activerecord.attributes.book.location_id') %>: </strong>
+        <!-- Location: -->
+        <%= @book.location.name %>
+    </p>
+      <!-- <p> -->
+        <!-- <strong>Rating:</strong> -->
+        <!-- <%= @book.rating %> -->
+      <!-- </p> -->
+    <p>
+        <% if @book.holder.present? %>
+            <strong> <%= t('activerecord.attributes.book.holder_id') %>: </strong>
+            <!-- Holder: -->
+            <% if @book.holder.name.present? && @book.holder.surname.present? %>
+                  <%= @book.holder.name + " " + @book.holder.surname  %> 
+            <% else %>
+                  <%= @book.holder.email %>          
+            <% end %>
+        <%else %>
+            <!-- <%= t('book.available_in_location') %>  -->
+            <!-- <%='no holder'%> -->
+        <% end %>
+    </p> 
 </div>  
  
 <% if user_signed_in?&&current_user.admin? %>
-<%= link_to t('action.edit'), edit_admin_book_path(@book), class: "btn btn-warning" %> 
-
-<%= link_to t('action.destroy'), admin_book_path(@book), method: :delete, data: { confirm: t('action.are_you_sure') }, class: "btn btn-danger" %>
-<!-- 'Are you sure?' -->
+    <%= link_to t('action.edit'), edit_admin_book_path(@book), class: "btn btn-warning" %> 
+    <%= link_to t('action.destroy'), admin_book_path(@book), method: :delete, data: { confirm: t('action.are_you_sure') }, class: "btn btn-danger" %>
+    <!-- 'Are you sure?' -->
 <% end %>
 <%= link_to t('common.back'), :back, class: "btn btn-secondary" %>
 <!-- 'Back' -->

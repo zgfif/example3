@@ -106,8 +106,8 @@ body{
 .easy-autocomplete{
 	width:100% !important;	
 }
-a:visited {
-  color: black;
+a:link, a:visited {
+  color: inherit;
 }
 //a:hover {
 //	color: blue !important;

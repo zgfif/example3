@@ -11,13 +11,10 @@
      <% if user_signed_in?&&current_user.admin? %>
            <span><%= link_to t('welcome.users'), admin_users_path, class: "nav-item nav-link" %></span>
     <% end %>
-
 </section>
-
 <center>
     <h1><%= t('welcome.recent') %></h1>
 </center>
-    
 <div class="card-deck d-flex flex-nowrap">
 	   <% @books.each do |book| %>
       	<div class= "card parrent_bottom">
@@ -26,12 +23,11 @@
                 <div class="card-body text-center">
                     <h5 class="card-title">
                         <%= link_to book.title, book_path(book) %>
-                    </h5>
-                
+                    </h5>                
                   <% if book.available? %>
                       <%#= "(available now) " %> 
                       <div>
-                          <span class="badge badge-primary"><%= t('common.available') %></span>
+                          <span class="badge badge-success"><%= t('common.available') %></span>
                           <!-- available now -->
                       </div>
                       
