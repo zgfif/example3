@@ -25,9 +25,17 @@
                               <% end %>
                           </ul>
                           <ul class="navbar-nav">
+                              <%= form_with url: search_path, local: true, method: :get do |form| %>
+                                  <%= form.text_field :q, :size =>"30", placeholder: t('search.placeholder'), data:{behavior: "autocomplete"}, class: "form-control width_of_search" %>
+                              <% end %>
+
+
+
+
+
                             <% if user_signed_in? %>
                                 <li class="nav-item nav-link active padding_header">
-                                    <%= current_user.name.present? ? t('header.hello')+", "+current_user.name : t('header.hello')+", "+current_user.email+"  "  %>
+                                    <%= current_user.name.present? ? t('header.hello')+", "+current_user.name : t('header.hello')+", "+current_user.email+"  " %>
                                 </li>
                                 <li class="nav-item nav-link active padding_header">
                                   <%= current_user.admin? ? t('header.admin') : "" %>
@@ -66,9 +74,7 @@
                         </div>                                                                    
                   </nav> 
                   <div class="container search_margin_top">
-                    <%= form_with url: search_path, local: true, method: :get do |form| %>
-                      <%= form.text_field :q, :size =>"50", placeholder: t('search.placeholder'), data:{behavior: "autocomplete"}, class: "form-control width_of_search" %>
-                    <% end %>
+                    <!-- Place for search form -->
                   </div>             
             </div>     
             <p class="notice container floating">

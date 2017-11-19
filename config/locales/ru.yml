@@ -22,7 +22,9 @@ ru:
     register: 'Регистрация'
     sign_in: 'Вход'
   search:
+    search_results_for: 'Результаты поиска'
     placeholder: 'Введите книгу, автора или локацию'
+    please_type_something: 'Пожалуйста, напишите что-либо для поиска'
   footer:
     about: 'О нас'
     contacts: 'Контакты'
@@ -120,7 +122,6 @@ ru:
     full_location_address: 'Полный адрес локации (город, индекс, улица, и т.п.)'
     usefull_info_location: 'Полезная информация о локации'
   user:
-
     added_to_locations: 'добавил в локации (книг)'
     took_from_locations: 'забрал из локаций (книг)'
     editing_user: 'Редактирование пользователя'
@@ -144,4 +145,4 @@ ru:
     your_feedback: 'Ваш отзыв'
     leave_feedback: 'Оставить отзыв'
   pages:
-    our_ruby_team: 'Наша ruby-команда'  
+    our_ruby_team: 'Наша ruby-команда'

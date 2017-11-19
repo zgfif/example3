@@ -35,7 +35,7 @@
         <%= @book.user.name.present? && @book.user.surname.present? ? @book.user.name+" "+@book.user.surname : @book.user.email %>
     </p>  
     <p>
-        <strong> <%= t('activerecord.attributes.book.author_id') %>: </strong">
+        <strong> <%= t('activerecord.attributes.book.author_id') %>: </strong>
         <!-- Author: -->
         <%= @book.author.name+" "+@book.author.surname %>
     </p>

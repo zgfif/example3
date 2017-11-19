@@ -22,7 +22,9 @@ en:
     register: 'Register'
     sign_in: 'Sign in'
   search:
+    search_results_for: 'Search results for'
     placeholder: 'Enter book, author or location'
+    please_type_something: 'Please, type something'
   footer:
     about: 'About us'
     contacts: 'Contacts'
@@ -120,7 +122,6 @@ en:
     full_location_address: 'Full address (city, zip, street, etc)'
     usefull_info_location: 'Usefull info about location'
   user:
-
     added_to_locations: 'added to locations (books)'
     took_from_locations: 'took from locations (books)'
     editing_user: 'Editing user'
@@ -144,4 +145,4 @@ en:
     your_feedback: 'Your feedback'
     leave_feedback: 'Make feedback'
   pages:
-    our_ruby_team: 'Our ruby-team'  
+    our_ruby_team: 'Our ruby-team'      
