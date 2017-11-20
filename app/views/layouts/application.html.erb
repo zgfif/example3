@@ -20,7 +20,7 @@
                           <ul class="navbar-nav mr-auto">
                           	<% unless current_page?(root_path) %>
 		                              <li class="nav-item active">
-		                                  <%= link_to t('common.back'), :back, class: "nav-link padding_header" %>
+		                                  <%#= link_to t('common.back'), :back, class: "nav-link padding_header" %>
 		                              </li>  
                               <% end %>
                           </ul>
@@ -89,8 +89,8 @@
       </div>   
       <footer class="footer floating">
         <center>
-                 <span>
-                <%= link_to t('footer.github'), 'http://github.com/zgfif/example3',:target => '_blank' %>
+            <span>
+                <%= link_to t('footer.rules'), rule_path %>      
             </span> 
             <span>
                 <%= link_to t('footer.about'), about_path %>  
@@ -102,7 +102,8 @@
                 <%= link_to t('footer.our_team'), our_team_path %>  
             </span>       
             <span>
-              <%= link_to t('footer.rules'), rule_path %>  
+              <%= link_to t('footer.github'), 'http://github.com/zgfif/example3',:target => '_blank' %>
+                
             </span>      
         </center>   
       </footer>    

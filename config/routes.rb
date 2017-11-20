@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
         devise_for :users
-        
+        get :thank, controller: :feedbacks
         get :search, controller: :welcome
         get :autocomplete, controller: :welcome
         get '/rule' => 'pages#rule'
@@ -27,8 +27,7 @@ Rails.application.routes.draw do
           resources :genres, except: [:index,:show]
           resources :users#, except: [:index, :show]
           resources :locations, except: [:index,:show]
-           resources :statistic, only: :index
-          
+          resources :statistic, only: :index          
         end  
   end    
 end

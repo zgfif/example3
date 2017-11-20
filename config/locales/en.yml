@@ -26,11 +26,11 @@ en:
     placeholder: 'Enter book, author or location'
     please_type_something: 'Please, type something'
   footer:
-    about: 'About us'
+    about: 'About'
     contacts: 'Contacts'
     our_team: 'Our team'
     rules: 'Rules'
-    github: 'Our github'    
+    github: 'Github'    
   common:
     add: 'Add'
     change: 'Change'
@@ -133,6 +133,7 @@ en:
     new_user: 'New user'        
     update_pass_and_or_email: 'update password and(or) email'
   action:
+    details: 'Details'
     show: 'Show'
     edit: 'Edit'
     edit_profile: 'Edit profile'
@@ -140,9 +141,12 @@ en:
     are_you_sure: 'Are you sure?'
     send: 'Send'
   feedback:
+    thank_feedback: 'Thank you for feedback'
+    we_ll_connect_as: 'We will connect as soon as possible'
     editing_feedback: 'Editing feedback'
     whats_your_opinion_about: 'What do think about our service?'
     your_feedback: 'Your feedback'
     leave_feedback: 'Make feedback'
   pages:
+    about_project_booksget: 'About project Booksget'
     our_ruby_team: 'Our ruby-team'      

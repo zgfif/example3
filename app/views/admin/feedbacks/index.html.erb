@@ -9,6 +9,10 @@
   <thead>
     <tr>
       <th>
+        <%= t('activerecord.attributes.user.email') %>
+      <!-- Title -->
+     </th>
+      <th>
         <%= t('activerecord.attributes.feedback.title') %>
       <!-- Title -->
      </th>
@@ -23,6 +27,7 @@
   <tbody>
     <% @feedbacks.each do |feedback| %>
       <tr>
+        <td><%= feedback.email %></td>
         <td><%= feedback.title %></td>
         <td><%= feedback.text %></td>
         <td><%= link_to t('action.show'), admin_feedback_url(feedback) %></td>

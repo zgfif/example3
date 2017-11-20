@@ -48,6 +48,9 @@ en:
         email: 'e-mail'
         telephone: 'Telephone'   
     errors:
+      prohibited_this_feedback: 'prohibited this feedback from being saved:'
+      prohibited_this_user: 'prohibited this user from being saved:'
+      from_being_saved: 'from being saved:'
       messages:
         blank: 'can not be blank'
     models:

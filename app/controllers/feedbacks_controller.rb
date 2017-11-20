@@ -30,13 +30,15 @@ class FeedbacksController < ApplicationController
 
     respond_to do |format|
       if @feedback.save
-        format.html { redirect_to contact_path, notice: 'Feedback was successfully created.' }
+        format.html { redirect_to thank_path, notice: 'Feedback was successfully created.' }
         format.json { render :show, status: :created, location: @feedback }
       else
         format.html { render :new }
         format.json { render json: @feedback.errors, status: :unprocessable_entity }
       end
     end
+  end
+  def thank
   end
 =begin
   # PATCH/PUT /feedbacks/1
@@ -71,6 +73,6 @@ class FeedbacksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def feedback_params
-      params.require(:feedback).permit(:title, :text)
+      params.require(:feedback).permit(:email,:title, :text)
     end
 end

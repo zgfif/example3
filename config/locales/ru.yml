@@ -30,7 +30,7 @@ ru:
     contacts: 'Контакты'
     our_team: 'Наша команда'
     rules: 'Правила'
-    github: 'Наш гитхаб'    
+    github: 'Github'    
   common:
     add: 'Добавить'
     change: 'Изменить'
@@ -133,6 +133,7 @@ ru:
     new_user: 'Новый пользователь'        
     update_pass_and_or_email: 'Обновить пароль и/или эл. почту'
   action:
+    details: 'Подробднее'
     show: 'Показать'
     edit: 'Редактировать'
     edit_profile: 'Редактировать профиль'
@@ -140,9 +141,12 @@ ru:
     are_you_sure: 'Вы уверены?'
     send: 'Отправить'
   feedback:
+    thank_feedback: 'Спасибо за Ваш отзыв'
+    we_ll_connect_as: 'Мы с Вами свяжемся при первой возможности'
     editing_feedback: 'Редактирование отзыва'
     whats_your_opinion_about: 'Ваше мнение о ресурсе?'
     your_feedback: 'Ваш отзыв'
     leave_feedback: 'Оставить отзыв'
   pages:
+    about_project_booksget: 'О проекте Booksget'
     our_ruby_team: 'Наша ruby-команда'

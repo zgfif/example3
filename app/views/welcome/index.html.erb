@@ -43,7 +43,8 @@
                     <%= t('welcome.brought') %>
                      <%= l book.created_at, :format=> :short %> 
                     
-                    <!-- <%= " "+book.created_at.strftime("%e %B")+t('welcome.to') %> <%= link_to book.location.name , location_path(book.location)%>  -->
+                    <!-- <%= " "+book.created_at.strftime("%e %B")+t('welcome.to') %>  -->
+                    <%= link_to book.location.name , location_path(book.location)%>  
                   </p>  
           </div>   
             </div>
