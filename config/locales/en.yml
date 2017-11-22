@@ -149,4 +149,7 @@ en:
     leave_feedback: 'Make feedback'
   pages:
     about_project_booksget: 'About project Booksget'
-    our_ruby_team: 'Our ruby-team'      
+    our_ruby_team: 'Our ruby-team'
+  rule_page:
+      terms_of_use_of_our_service: 'Terms of use of our service'
+      current_service_was_designed: 'Current service was designed for free file exchange of artistic, classic or technical literature between users.'        
