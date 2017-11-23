@@ -1,22 +1,10 @@
 <!-- <p id="notice"><%= notice %></p> -->
-
-<p>
-  <strong>
-      <!-- Name: -->
-      <%= t('activerecord.attributes.user.name') %>:
-</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>
-      <!-- Surname: -->
-      <%= t('activerecord.attributes.user.surname') %>:
-</strong>
-  <%= @user.surname %>
-</p>
-
-<p>
+<div class="container">
+    <div>
+        <h2><%= @user.name %> <%= @user.surname %></h2>  
+    </div>
+    
+    <p>
   <strong>
             <!-- Phone: -->
                   <%= t('activerecord.attributes.user.phone') %>:
@@ -63,25 +51,22 @@
                     
         <!-- Added by <%= @user.name %>:<br>   -->
   </strong>
-	
-	<% @user.added_books.each do |added_book| %>
-		    <%= link_to added_book.title, book_path(added_book) %> <br>     
-	<% end %> 
+  
+  <% @user.added_books.each do |added_book| %>
+        <%= link_to added_book.title, book_path(added_book) %> <br>     
+  <% end %> 
 </p>
 <p>
   <strong>  
                   <%= t('activerecord.attributes.user.held') %>:<br>
-                  <!-- <%= t('user.took_from_locations') %> -->
-                  
-      <!-- Held by <%= @user.name %>:<br>   -->
   </strong>
-	
-	<% @user.held_books.each do |held_book| %>
-	       <%= link_to held_book.title, book_path(held_book) %>
-	<% end %> 
+  
+  <% @user.held_books.each do |held_book| %>
+         <%= link_to held_book.title, book_path(held_book) %>
+  <% end %> 
 </p>
+
+</div>
 
 <%= link_to t('action.edit_profile'), edit_admin_user_path(@user), class: "btn btn-warning" %> 
 <%= link_to t('common.back'), :back, class: "btn btn-secondary" %>
-<!-- 'Back' -->
-<!-- 'Edit profile' -->

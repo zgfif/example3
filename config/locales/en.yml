@@ -38,6 +38,7 @@ en:
     back: 'Back'
     available: 'available now'
     busy: 'busy now'    
+    no_books_yet: 'No books yet'
   admin:
     statistic:
       stat: 'Statistics'
@@ -152,4 +153,18 @@ en:
     our_ruby_team: 'Our ruby-team'
   rule_page:
       terms_of_use_of_our_service: 'Terms of use of our service'
-      current_service_was_designed: 'Current service was designed for free file exchange of artistic, classic or technical literature between users.'        
+      current_service_was_designed: 'Current service was designed for free file exchange of artistic, classic or technical literature between users.'
+      how_it_works: 'How It Works?:'
+      takes_only_3_minutes: '1.Takes only 3 minutes to Register your profile.'        
+      optionally_user_might_provide: '1.1 Optionally, user might provide his own books for general access, which will increase his/her ratings and enhance the opportunities of working with the source'
+      website_provides_great: '1.2 Website provides great opportunity to browse-through donated books by the users as well as their locations.'
+      after_reading_the_material: '2. After reading the material, all users are advised to pass the book or the reading material to others users through the main page, marked as Locations.'
+      reader_passes_his_book: '3. Reader passes his book to admin and gets any book that he/she wishes to read or explore as long as it`s available.'
+      exchange_is_depended_on: '4. Exchange is depended on simple formula: amount of books you donate = amount of books you`ll get in return to work with.'
+      certain_content_is_prohibited: 'Certain content is prohibited on the website such as:'  
+      books_of_extremist_or: '* Books of extremist / or other content that contradicts, violates moral ethics or against the Law of Ukraine or any other country where the website is used, such material won`t be accepted for exchange between users.'
+      book_in_poor_condition: '* Books in poor condition such as: rusted, painted or books that are missing pages will not be accepted for exchange.'
+      admin_has_the_right: '* Admin has the right to refuse the books or files from the reader if it goes against the law or website rules and regulations without further explanation'
+      the_information_contained_on: '* The information contained on BooksGet is for general information purposes only. BooksGet assumes no responsibility for errors or omissions in the contents on the service.'
+      the_book_exchange_service_in_no_event_shall_be_liable: 'The book exchange service in no event shall be liable for any special direct, indirect, consequential or incidental damages or any damages whatsoever, whether in an action of contract, negligence or other tort, arising out of or in connection with use of the Service or the contents of the Service. BooksGet reserves the right to make additions, deletions, or modification to he contents on the service at any time without prior notice. BooksGet does not warrant that the website is free of viruses or other harmful components.
+        You will BE BANNED if you are: insulting or harassing other users. If such event appears, please make sure to Immediately report this person to any of the admins listed under the link “Team”.'

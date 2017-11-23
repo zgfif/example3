@@ -1,6 +1,22 @@
-<h1 class="text_in_one_row">По интересующим вопросам обращайтесь:</h1>
-<p>Вопросы сотрудичества: Олег Билык +38(093)-992-2025  </p>
-<p> Предложения и пожелания: Виктория </p>
-<p>Нашли ошибку в работе сайта: Павел Братанов +38(063)-329-5634 zihzag@gmail.com </p>
+<div class="jumbotron text-center">
+	<h1 class="text_in_one_row ">По интересующим вопросам обращайтесь:</h1>	
+</div>
+
+<div>
+	<p>
+		Вопросы сотрудичества: Олег Билык +38(093)-992-2025  
+	</p>	
+	 
+</div>
+<div>
+	<p> Предложения и пожелания: Виктория </p>	
+</div>
+<div>
+	<p>
+		Нашли ошибку в работе сайта: Павел Братанов +38(063)-329-5634 zihzag@gmail.com 
+		<%= link_to (image_tag "facebook.png", size: "30x30"), 'https://www.facebook.com/pasha.bratanov',:target => '_blank' %>
+	</p>
+</div>
+
 <%= link_to t('feedback.leave_feedback'), new_feedback_path, class: "btn btn-primary" %>
 <!-- 'Leave feedback' -->

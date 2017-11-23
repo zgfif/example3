@@ -1,29 +1,64 @@
 <!-- <p id="notice"><%= notice %></p> -->
+<div>
+    <h2><%= @author.name %> <%= @author.surname %></h2>    
+</div>
+<div>
+  <% if @author.books.present? %>
+    <div class="row">
+          <% @author.books.each do |book| %>
+              <div class="col-sm">
+                    <div >
+                          <%=  link_to (image_tag book.image, width:'auto', height:'150px', id: 'book_at_location'), book_path(book) if book.image? %> 
+                        </div>
+                    <div>
+                        <%= link_to book.title, book_path(book) %>    
+                    </div>    
+                    
+              </div>
+          <% end %>
+    </div>
+      
+
+  <% else %>
+      <h4>
+      <!-- No books yet -->
+      <%= t('common.no_books_yet') %>
+      </h4> 
+
+  <% end %>  
+</div>
+
+
+
+
 
 <p>
   <strong>
   		<!-- Name: -->
-  		<%= t('activerecord.attributes.author.name') %>:
+  		<%#= t('activerecord.attributes.author.name') %>
   </strong>
-  <%= @author.name %>
+  
 </p>
 
 <p>
   <strong>
   		<!-- Surname: -->
-  		<%= t('activerecord.attributes.author.surname') %>:
+  		<%#= t('activerecord.attributes.author.surname') %>
   	</strong>
-  <%= @author.surname %>
+  
 </p>
 <!-- This author has books in library:<br> -->
-<% @author.books.each do |book| %>
+<%# @author.books.each do |book| %>
         <%#= book.title %>
-	<%= link_to book.title, book_path(book) %>
-<% end %>
+	<%#= link_to book.title, book_path(book) %>
+<%# end %>
 </p>
 
 
-<%= link_to t('action.edit'), edit_admin_author_path(@author), class: "btn btn-warning" %> 
-<%= link_to t('common.back'), authors_path, class: "btn btn-secondary" %>
-<!-- 'Edit' -->
-<!-- 'Back' -->
+
+<div>
+    <%= link_to t('action.edit'), edit_admin_author_path(@author), class: "btn btn-warning" %> 
+    <%= link_to t('common.back'), authors_path, class: "btn btn-secondary" %>  
+</div>
+
+

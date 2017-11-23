@@ -1,19 +1,32 @@
-<!-- <p id="notice"><%= notice %></p> -->
 
-<p>
-	<strong><%= label :genre, :genre_name %></strong><br>
-	
-  <!-- <strong>Genre name:</strong> -->
-  <%= @genre.genre_name %>
-</p>
-<p>
-<!-- This genre has books:<br> -->
-<% @genre.books.each do |book| %>
-	<%#= book.title %>
-	<%= link_to book.title, book_path(book) %> <br>
-
-<% end %>
-</p>
+		<div>
+				<h2><%= @genre.genre_name %></h2>  	
+		</div>
+		<% if @genre.books.present? %>
+		 <div class="row">
+		              <% @genre.books.each do |book| %>
+		              <%#= book.title %>  
+		                      <div  class="col-sm">
+		                        <!-- <center> -->
+		                        <div >
+		                          <%=  link_to (image_tag book.image, width:'auto', height:'150px', id: 'book_at_location'), book_path(book) if book.image? %> 
+		                        </div>
+		                          <%= link_to book.title, book_path(book) %>  
+		                        <!-- </center> -->
+		                      </div>         
+		              <% end %>
+		            </div>
+		
+		<% else %>
+			<div>
+				<h4>
+				<!-- No books yet -->
+				<%= t('common.no_books_yet') %>
+			</h4>		
+			</div>
+		<% end %>	
+			
+		
 
 <%= link_to t('action.edit'), edit_admin_genre_path(@genre), class: "btn btn-warning" %> 
-<%= link_to t('common.back'), genres_path , class: "btn btn-secondary" %>
+<%= link_to t('common.back'), genres_path , class: "btn btn-secondary" %>	

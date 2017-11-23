@@ -50,12 +50,25 @@
           </p>
           <p>
             <!-- This location has books:<br> -->
-            <% @location.books.each do |book| %>
-              <%#= book.title %>
-              <div>
-                <%=  link_to (image_tag book.image, width:'auto', height:'150px', id: 'book_at_location'), book_path(book)  if book.image?  %>
+            <% if @location.books.present? %>
+            <div class="row">
+              <% @location.books.each do |book| %>
+              <%#= book.title %>  
+                      <div  class="col-sm">
+                        <!-- <center> -->
+                        <div >
+                          <%=  link_to (image_tag book.image, width:'auto', height:'150px', id: 'book_at_location'), book_path(book) if book.image? %> 
+                        </div>
+                          <%= link_to book.title, book_path(book) %>  
+                        <!-- </center> -->
+                      </div>         
+                <% end %>
             </div>
-              <%= link_to book.title, book_path(book) %><br>
+            <% else %>
+                  <h4>
+                      <%= t('common.no_books_yet') %> 
+                  </h4>
+                   
             <% end %>
           </p>  
       </div>  

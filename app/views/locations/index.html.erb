@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
 
 <h1>
   <!-- Locations -->
@@ -13,7 +13,7 @@
     <table class="table">
       <thead>
         <tr>
-          <th><%= t('activerecord.attributes.location.name') %></th>
+           <th><%#= t('activerecord.attributes.location.name') %></th> 
           <!-- Name -->
           <th><%= t('activerecord.attributes.location.address') %></th>
           <!-- Address -->
@@ -30,7 +30,7 @@
       <tbody>
         <% @locations.each do |location| %>
           <tr>
-            <td><%= location.name %></td>
+            <td><%= link_to location.name, location %></td>
             <td><%= location.address %></td>
             <td><%= location.description %></td>
             <td><%= location.email %></td>

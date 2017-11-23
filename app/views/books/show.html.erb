@@ -30,9 +30,11 @@
         <%= @book.description %>
     </p>
     <p>
+    	<% if user_signed_in?&&current_user.admin? %>
         <strong> <%= t('admin.books.added_user') %>: </strong>
         <!-- Added by: -->
         <%= @book.user.name.present? && @book.user.surname.present? ? @book.user.name+" "+@book.user.surname : @book.user.email %>
+        <% end %>
     </p>  
     <p>
         <strong> <%= t('activerecord.attributes.book.author_id') %>: </strong>
@@ -53,7 +55,7 @@
         <!-- <strong>Rating:</strong> -->
         <!-- <%= @book.rating %> -->
       <!-- </p> -->
-    <p>
+    <p> <% if user_signed_in?&&current_user.admin? %>
         <% if @book.holder.present? %>
             <strong> <%= t('activerecord.attributes.book.holder_id') %>: </strong>
             <!-- Holder: -->
@@ -65,6 +67,7 @@
         <%else %>
             <%#= t('book.available_in_location') %> 
             <%#='no holder'%>
+        <% end %>
         <% end %>
     </p> 
 </div>  
