@@ -10,14 +10,24 @@
           </h1>  
         
 </div>
-
+<p>
+          <% if user_signed_in?&&current_user.admin? %>
+            <strong>
+                  <!-- d: -->
+                  id:
+            </strong>
+            <%= @location.id %>
+         
+        <% end %>
+      </p>
 <div id="location_show_content">
       <div id="picture_at_show_location">
             <div class="locations_size">
                 <%= image_tag @location.picture  if @location.picture? %>
             </div>  
       </div>
-
+      
+        
       <div id="text_at_show_location">
           <p>
             <strong>
