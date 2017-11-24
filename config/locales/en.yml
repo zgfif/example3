@@ -149,6 +149,12 @@ en:
     your_feedback: 'Your feedback'
     leave_feedback: 'Make feedback'
   pages:
+    the_main_idea: 'The main idea - is to provide an opportunity to freely transfer your books and receive, if desired, another in return. Since after reading the book usually collects on the shelf until better times and with time the books fill all the free space. With such an exchange, you will have very few books, only those that you have not finished reading or use regularly.'
+    this_project_is_being: 'This project is being developed as a non-commercial service for the exchange of literature.'
+    found_an_error: 'Found an error'
+    suggestions_and_wishes: 'Suggestions and wishes:'
+    cooperation_issues: 'Cooperation issues:'
+    have_questions: 'Have questions?'
     about_project_booksget: 'About project Booksget'
     our_ruby_team: 'Our ruby-team'
   rule_page:
