@@ -10,7 +10,7 @@
 
 **Алгоритм установки:**
  1. Клонируйте или загрузите(zip) репозиторий в определённую папку (например, my_folder).
- 2. Создайте базу данных для mysql с именем **search2_dev** (имя БД для development представлено в файле *example3/config/database.yml*).
+ 2. Создайте базу данных для mysql с помощью команды `rails db:create` (имя БД для development представлено в файле *example3/config/database.yml*).
  3. Выполните команду  `bundle install --without production`.       
      *может потребоваться установка дополнительных библиотек для gem nokogiri . Для их установки перейдите по [ссылке](http://www.nokogiri.org/tutorials/installing_nokogiri.html#red_hat___centos)
  4. Выполните команду `rails db:migrate`;

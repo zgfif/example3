@@ -12,14 +12,14 @@
 
 ActiveRecord::Schema.define(version: 20171120065634) do
 
-  create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "surname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "books", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "books", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
     t.string "language"
     t.text "description"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20171120065634) do
     t.index ["user_id"], name: "index_books_on_user_id"
   end
 
-  create_table "feedbacks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "feedbacks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
     t.text "text"
     t.datetime "created_at", null: false
@@ -47,13 +47,13 @@ ActiveRecord::Schema.define(version: 20171120065634) do
     t.string "email"
   end
 
-  create_table "genres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "genres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "genre_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "locations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "locations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.text "address"
     t.text "description"
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20171120065634) do
     t.string "picture"
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "surname"
     t.string "phone"
