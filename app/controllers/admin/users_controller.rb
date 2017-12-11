@@ -9,8 +9,8 @@ class Admin::UsersController < Admin::AdminController
       if user_signed_in? and current_user.id == params[:id].to_i
         true
       end
-    end 
-  # before_action :authenticate_user!, except: :new   
+    end
+  # before_action :authenticate_user!, except: :new
   # GET /users
   # GET /users.json
 
@@ -57,7 +57,7 @@ class Admin::UsersController < Admin::AdminController
               params[:user].delete :password_confirmation
        end
     respond_to do |format|
-      
+
 
       if @user.update(user_params)
         format.html { redirect_to admin_user_path(@user), notice: 'User was successfully updated.' }

@@ -3,10 +3,10 @@
 <!-- <p>Find desired books</p> -->
 <section class="container nav justify-content-center font_nav">
       <% if user_signed_in? %>
-        <span><%= link_to t('welcome.books'), books_path, class: "nav-item nav-link" %></span>      
+        <span><%= link_to t('welcome.books'), books_path, class: "nav-item nav-link" %></span>
      <% end %>
-     <span><%= link_to t('welcome.authors'), authors_path, class: "nav-item nav-link" %></span>     
-     <span><%= link_to t('welcome.genres'), genres_path, class: "nav-item nav-link" %></span> 
+     <span><%= link_to t('welcome.authors'), authors_path, class: "nav-item nav-link" %></span>
+     <span><%= link_to t('welcome.genres'), genres_path, class: "nav-item nav-link" %></span>
      <span><%= link_to t('welcome.locations'), locations_path, class: "nav-item nav-link" %></span>
      <% if user_signed_in?&&current_user.admin? %>
            <span><%= link_to t('welcome.users'), admin_users_path, class: "nav-item nav-link" %></span>
@@ -29,39 +29,39 @@
                 <div class="card-body text-center">
                     <h5 class="card-title">
                         <%= link_to book.title, book_path(book) %>
-                    </h5>                
+                    </h5>
                   <% if book.available? %>
-                      <%#= "(available now) " %> 
+                      <%#= "(available now) " %>
                       <div>
                           <span class="badge badge-success"><%= t('common.available') %></span>
                           <!-- available now -->
                       </div>
-                      
+
                   <%else %>
-                      <%#= "(busy now)" %> 
+                      <%#= "(busy now)" %>
                       <div>
-                          <span class="badge badge-secondary"><%= t('common.busy') %></span>  
+                          <span class="badge badge-secondary"><%= t('common.busy') %></span>
                           <!-- busy now -->
                       </div>
-                      
+
                   <% end %>
                   <p class="card-text">
                     <%= t('welcome.brought') %>
-                     <%= l book.created_at, :format=> :short %> 
-                    
+                     <%= l book.created_at, :format=> :short %>
+
                     <!-- <%= " "+book.created_at.strftime("%e %B")+t('welcome.to') %>  -->
-                    <%= link_to book.location.name , location_path(book.location)%>  
-                  </p>  
-          </div>   
+                    <%= link_to book.location.name , location_path(book.location)%>
+                  </p>
+          </div>
             </div>
-               		
+
       	</div>
       	<!-- <hr> -->
 	   <% end %>
 </div>
 <br>
 
-<!-- 
+<!--
 <% @locations.each do |location| %>
       <%= image_tag location.picture.url(:large) if location.picture? %>
 <% end %>
@@ -93,7 +93,7 @@
                 <% end %>
         <% end %>
 
-    <%end %> 
+    <%end %>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -104,7 +104,3 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
-
-
-
